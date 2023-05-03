@@ -45,7 +45,7 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 	@Override
 	public AgendaDomain toDomainFromEntity(AgendaEntity entity) {
 		return new AgendaDomain(entity.getIdentificador(),PeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getPeriodoFuncionamiento()),
-				CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInformatica())),entity.getNombre());
+				CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInformatica()),entity.getNombre());
 	}
 	
 	

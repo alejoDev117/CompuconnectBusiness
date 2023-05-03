@@ -98,7 +98,7 @@ public class PeriodoFuncionamientoDomain {
 	
 	
 	private void setDiaFestivo(final DiaFestivoDomain diaFestivo) {
-		this.diaFestivo = UtilObject.getDefault(diaFestivo, DiaFestivoDomain.getDefaultObject()));
+		this.diaFestivo = UtilObject.getDefault(diaFestivo, DiaFestivoDomain.getDefaultObject());
 		
 	
 	}
