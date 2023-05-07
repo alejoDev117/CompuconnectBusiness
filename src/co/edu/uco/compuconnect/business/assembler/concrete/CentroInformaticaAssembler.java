@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.CentroInformaticaDomain;
 import co.edu.uco.compuconnect.dto.CentroInformaticaDTO;
@@ -40,6 +42,12 @@ public final class CentroInformaticaAssembler implements Assembler<CentroInforma
 	@Override
 	public final  CentroInformaticaDomain toDomainFromEntity(CentroInformaticaEntity entity) {
 		return new CentroInformaticaDomain(entity.getIdentificador(),entity.getNombre(),entity.getUbicacion(),entity.isPoseeVideoBeam());
+	}
+
+
+	@Override
+	public List<CentroInformaticaDomain> toDomainListFromEntityList(List<CentroInformaticaEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
 }

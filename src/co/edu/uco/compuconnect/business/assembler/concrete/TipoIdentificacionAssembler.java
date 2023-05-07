@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.TipoIdentificacionDomain;
 import co.edu.uco.compuconnect.dto.TipoIdentificacionDTO;
@@ -41,6 +43,12 @@ public final class TipoIdentificacionAssembler implements Assembler<TipoIdentifi
 	@Override
 	public TipoIdentificacionDomain toDomainFromEntity(TipoIdentificacionEntity entity) {
 		return new TipoIdentificacionDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
+	}
+
+
+	@Override
+	public List<TipoIdentificacionDomain> toDomainListFromEntityList(List<TipoIdentificacionEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

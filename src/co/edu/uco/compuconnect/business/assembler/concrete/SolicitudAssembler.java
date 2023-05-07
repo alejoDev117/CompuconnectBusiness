@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.SolicitudDomain;
 import co.edu.uco.compuconnect.dto.SolicitudDTO;
@@ -47,6 +49,11 @@ public final class SolicitudAssembler implements Assembler<SolicitudDomain,Solic
 		return new SolicitudDomain(entity.getIdentificador(),UsuarioAssembler.getInstance().toDomainFromEntity(entity.getAutor()),
 				TipoSolicitudAssembler.getInstance().toDomainFromEntity(entity.getTipoSolicitud()),entity.getDescripcion(),entity.getHoraCreacion(),
 				EstadoSolicitudAssembler.getInstance().toDomainFromEntity(entity.getEstadoSolicitud()));
+	}
+
+	@Override
+	public List<SolicitudDomain> toDomainListFromEntityList(List<SolicitudEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

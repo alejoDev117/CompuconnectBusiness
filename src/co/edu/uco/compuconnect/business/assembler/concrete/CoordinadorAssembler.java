@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.CoordinadorDomain;
 import co.edu.uco.compuconnect.dto.CoordinadorDTO;
@@ -48,6 +50,12 @@ public final  class CoordinadorAssembler implements Assembler<CoordinadorDomain,
 	public CoordinadorDomain toDomainFromEntity(CoordinadorEntity entity) {
 		return new CoordinadorDomain(entity.getIdentificador(),entity.getNombre(),TipoIdentificacionAssembler.getInstance().toDomainFromEntity(entity.getTipoIdentificacion()),
 				entity.getIdentificacion(),entity.getCorreoInstitucional(),entity.getNumeroCelular());
+	}
+
+
+	@Override
+	public List<CoordinadorDomain> toDomainListFromEntityList(List<CoordinadorEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	
