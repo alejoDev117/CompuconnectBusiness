@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.MonitorDomain;
 import co.edu.uco.compuconnect.dto.MonitorDTO;
@@ -51,12 +49,6 @@ public final class MonitorAssembler implements Assembler<MonitorDomain,MonitorDT
 	public MonitorDomain toDomainFromEntity(MonitorEntity entity) {
 		return new MonitorDomain(entity.getIdentificador(),entity.getNombre(),TipoIdentificacionAssembler.getInstance().toDomainFromEntity(entity.getTipoIdentificacion()),
 				entity.getIdentificacion(),entity.getCorreoInstitucional(),entity.getNumeroCelular());
-	}
-
-
-	@Override
-	public List<MonitorDomain> toDomainListFromEntityList(List<MonitorEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

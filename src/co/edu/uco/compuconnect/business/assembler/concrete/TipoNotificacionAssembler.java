@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.TipoNotificacionDomain;
 import co.edu.uco.compuconnect.dto.TipoNotificacionDTO;
@@ -42,12 +40,6 @@ public final class TipoNotificacionAssembler implements Assembler<TipoNotificaci
 	@Override
 	public TipoNotificacionDomain toDomainFromEntity(TipoNotificacionEntity entity) {
 		return new TipoNotificacionDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
-	}
-
-
-	@Override
-	public List<TipoNotificacionDomain> toDomainListFromEntityList(List<TipoNotificacionEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
 	

@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.DiaSemanalDomain;
 import co.edu.uco.compuconnect.dto.DiaSemanalDTO;
@@ -43,12 +41,6 @@ public final class DiaSemanalAssembler implements Assembler<DiaSemanalDomain,Dia
 	@Override
 	public DiaSemanalDomain toDomainFromEntity(DiaSemanalEntity entity) {
 		return new DiaSemanalDomain(entity.getIdentificador(),entity.getNombre());
-	}
-
-
-	@Override
-	public List<DiaSemanalDomain> toDomainListFromEntityList(List<DiaSemanalEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

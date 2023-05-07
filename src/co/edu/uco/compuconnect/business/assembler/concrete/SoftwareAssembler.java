@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.SoftwareDomain;
 import co.edu.uco.compuconnect.dto.SoftwareDTO;
@@ -41,12 +39,6 @@ public final class SoftwareAssembler implements Assembler<SoftwareDomain,Softwar
 	public SoftwareDomain toDomainFromEntity(SoftwareEntity entity) {
 		
 		return new SoftwareDomain(entity.getIdentidicador(),entity.getNombre(),entity.getVersion());
-	}
-
-
-	@Override
-	public List<SoftwareDomain> toDomainListFromEntityList(List<SoftwareEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

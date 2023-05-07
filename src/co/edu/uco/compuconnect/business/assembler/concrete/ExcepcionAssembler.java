@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.ExcepcionDomain;
 import co.edu.uco.compuconnect.dto.ExcepcionDTO;
@@ -37,11 +35,6 @@ public final class ExcepcionAssembler implements Assembler<ExcepcionDomain,Excep
 	@Override
 	public ExcepcionDomain toDomainFromEntity(ExcepcionEntity entity) {
 		return new ExcepcionDomain(entity.getIdentificador(),entity.getFechaInicio(),entity.getFechaFin(),entity.getHoraInicio(),entity.getHoraFin(),FrecuenciaAssembler.getInstance().toDomainFromEntity(entity.getFrecuencia()),entity.getMotivo());
-	}
-
-	@Override
-	public List<ExcepcionDomain> toDomainListFromEntityList(List<ExcepcionEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

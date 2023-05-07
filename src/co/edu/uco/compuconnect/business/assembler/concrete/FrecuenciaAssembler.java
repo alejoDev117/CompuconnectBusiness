@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.FrecuenciaDomain;
 import co.edu.uco.compuconnect.dto.FrecuenciaDTO;
@@ -43,12 +41,6 @@ public final class FrecuenciaAssembler implements Assembler<FrecuenciaDomain,Fre
 	@Override
 	public FrecuenciaDomain toDomainFromEntity(FrecuenciaEntity entity) {
 		return new FrecuenciaDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
-	}
-
-
-	@Override
-	public List<FrecuenciaDomain> toDomainListFromEntityList(List<FrecuenciaEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	

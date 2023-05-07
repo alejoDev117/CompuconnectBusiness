@@ -1,7 +1,5 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
-import java.util.List;
-
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.ReservaDomain;
 import co.edu.uco.compuconnect.dto.ReservaDTO;
@@ -58,12 +56,6 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 				TipoReservaAssembler.getInstance().toDomainFromEntity(entity.getTipoReserva()),entity.getFechaInicio(),entity.getFechaFin(),
 				FrecuenciaAssembler.getInstance().toDomainFromEntity(entity.getFrecuencia()),CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInformatica()),
 				entity.getDescripcion(),entity.getHoraCreacion());
-	}
-
-
-	@Override
-	public List<ReservaDomain> toDomainListFromEntityList(List<ReservaEntity> entityList) {
-		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	
