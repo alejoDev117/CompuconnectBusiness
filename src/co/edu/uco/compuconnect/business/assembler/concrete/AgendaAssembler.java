@@ -16,8 +16,7 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 
 
 	public static final Assembler<AgendaDomain, AgendaDTO, AgendaEntity> getInstance() {
-		return INSTANCE;
-	}
+		return INSTANCE;}
 
 
 	@Override
