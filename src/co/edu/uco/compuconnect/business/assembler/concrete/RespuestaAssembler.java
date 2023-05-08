@@ -39,7 +39,7 @@ public class RespuestaAssembler implements Assembler<RespuestaDomain, RespuestaD
 
 	@Override
 	public RespuestaDomain toDomainFromEntity(RespuestaEntity entity) {
-		return new RespuestaDomain(entity.getIdentificador(), CoordinadorAssembler.getInstance().toDomainFromDto(entity.getAutor()),
+		return new RespuestaDomain(entity.getIdentificador(), CoordinadorAssembler.getInstance().toDomainFromEntity(entity.getAutor()),
 				entity.getObservacion(), entity.getFecha());
 	}
 
