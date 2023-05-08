@@ -10,9 +10,9 @@ public class TipoUsuarioDomain {
 	
 	
 	private static final TipoUsuarioDomain DEFAULT_OBJECT = new TipoUsuarioDomain();
-	private UUID identificador;
-	private String nombre;
-	private String descripcion;
+	protected UUID identificador;
+	protected String nombre;
+	protected String descripcion;
 	
 	
 	public TipoUsuarioDomain(UUID identificador, String nombre, String descripcion) {
@@ -35,7 +35,7 @@ public class TipoUsuarioDomain {
 		return DEFAULT_OBJECT;
 	}
 
-	public final UUID getIdentificador() {
+	public UUID getIdentificador() {
 		return identificador;
 	}
 	

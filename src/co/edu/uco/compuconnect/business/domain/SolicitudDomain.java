@@ -8,10 +8,14 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 
-public final class SolicitudDomain extends ContenidoDomain {
+public final class SolicitudDomain{
 	
 	private static final SolicitudDomain DEFAULT_OBJECT = new SolicitudDomain();
+	private UUID identificador;
+	private UsuarioDomain autor;
 	private TipoSolicitudDomain tipoSolicitud;
+	private String descripcion;
+	private Date horaCreacion;
 	private EstadoSolicitudDomain estadoSolicitud;
 	
 	public SolicitudDomain(UUID identificador, UsuarioDomain autor, TipoSolicitudDomain tipoSolicitud, String descripcion, Date horaCreacion, EstadoSolicitudDomain estadoSolicitud) {
@@ -37,7 +41,7 @@ public final class SolicitudDomain extends ContenidoDomain {
 	}
 	
 	
-	
+
 
 
 	public static final SolicitudDomain getDefaultObject() {

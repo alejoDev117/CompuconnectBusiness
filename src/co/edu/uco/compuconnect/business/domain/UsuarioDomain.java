@@ -7,10 +7,15 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 
-public final class UsuarioDomain extends DestinatarioDomain {
+public class UsuarioDomain {
 	
-	private TipoUsuarioDomain tipoUsuario;
-	private static final UsuarioDomain DEAFAUL_OBJECT  = new UsuarioDomain();
+	protected UUID identificador;
+	protected TipoUsuarioDomain tipoUsuario;
+	protected String nombre;
+	protected TipoIdentificacionDomain tipoIdentificacion;
+	protected String identificacion;
+	protected String correoInstitucional;
+	protected static final UsuarioDomain DEAFAUL_OBJECT  = new UsuarioDomain();
 	
 
 	public UsuarioDomain(UUID identificador, TipoUsuarioDomain tipoUsuario, String nombre, TipoIdentificacionDomain tipoIdentificacion, String numeroIdentificacion, String correoInstitucional ) {
@@ -23,7 +28,7 @@ public final class UsuarioDomain extends DestinatarioDomain {
 		
 	}
 	
-	private  UsuarioDomain() {
+	protected  UsuarioDomain() {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setTipoUsuario(TipoUsuarioDomain.getDefaultObject());
@@ -42,7 +47,7 @@ public final class UsuarioDomain extends DestinatarioDomain {
 		return DEAFAUL_OBJECT;
 	}
 
-	public final TipoUsuarioDomain getTipoUsuario() {
+	public TipoUsuarioDomain getTipoUsuario() {
 		return tipoUsuario;
 	}
 
