@@ -1,7 +1,7 @@
 package co.edu.uco.compuconnect.business.business.imp;
 
 import co.edu.uco.compuconnect.business.business.DestinatarioNotificacionBusiness;
-import co.edu.uco.compuconnect.business.business.DestinatarioNotificacionDomain;
+import co.edu.uco.compuconnect.business.domain.DestinatarioNotificacionDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 
 public final class DestinatarioNotificacionBusinessImp implements DestinatarioNotificacionBusiness{

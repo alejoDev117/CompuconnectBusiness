@@ -3,7 +3,7 @@ package co.edu.uco.compuconnect.business.business.imp;
 import java.util.List;
 
 import co.edu.uco.compuconnect.business.business.BuzonSolicitudBusiness;
-import co.edu.uco.compuconnect.business.business.BuzonSolicitudDomain;
+import co.edu.uco.compuconnect.business.domain.BuzonSolicitudDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 
 public final class BuzonSolicitudBusinessImp implements BuzonSolicitudBusiness{

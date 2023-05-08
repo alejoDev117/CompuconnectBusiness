@@ -3,7 +3,7 @@ package co.edu.uco.compuconnect.business.business.imp;
 import java.util.List;
 
 import co.edu.uco.compuconnect.business.business.PerfilBusiness;
-import co.edu.uco.compuconnect.business.business.PerfilDomain;
+import co.edu.uco.compuconnect.business.domain.PerfilDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 
 public final class PerfilBusinessImp implements PerfilBusiness{

@@ -3,7 +3,7 @@ package co.edu.uco.compuconnect.business.business.imp;
 import java.util.List;
 
 import co.edu.uco.compuconnect.business.business.HorarioPersonaEncargadaBusiness;
-import co.edu.uco.compuconnect.business.business.HorarioPersonaEncargadaDomain;
+import co.edu.uco.compuconnect.business.domain.HorarioPersonaEncargadaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 
 public final class HorarioPersonaEncargadaBusinessImp implements HorarioPersonaEncargadaBusiness{
