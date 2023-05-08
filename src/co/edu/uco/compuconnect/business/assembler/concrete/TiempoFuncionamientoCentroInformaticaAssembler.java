@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.TiempoFuncionamientoCentroInformaticaDomain;
 import co.edu.uco.compuconnect.dto.TiempoFuncionamientoCentroInformaticaDTO;
@@ -54,6 +56,13 @@ public final  class TiempoFuncionamientoCentroInformaticaAssembler implements As
 				PeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getPeriodoFuncionamiento()),
 				CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInfomatica()),
 				DiaSemanalAssembler.getInstance().toDomainFromEntity(entity.getDia()),entity.getHoraInicio(),entity.getHoraFin());
+	}
+
+
+	@Override
+	public List<TiempoFuncionamientoCentroInformaticaDomain> toDomainListFromEntityList(
+			List<TiempoFuncionamientoCentroInformaticaEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 	
 	
