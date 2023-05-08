@@ -7,15 +7,17 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 
-public final class CoordinadorDomain extends PersonaEncargadaDomain {
-
+public final class CoordinadorDomain extends UsuarioDomain {
+	
+	private String numeroCelular;
 	private static final CoordinadorDomain DEFAULT_OBJECT = new CoordinadorDomain();
 	
 	
-	public CoordinadorDomain(UUID identificador, String nombre, TipoIdentificacionDomain tipoIdentificacion, String numeroIdentificacion, String correoInstitucional, String numeroCelular) {
+	public CoordinadorDomain(UUID identificador, String nombre, TipoIdentificacionDomain tipoIdentificacion, String numeroIdentificacion, String correoInstitucional, String numeroCelular, TipoUsuarioDomain tipoUsuario) {
 		super();
 		setIdentificador(identificador);
 		setNombre(nombre);
+		setTipoUsuario(tipoUsuario);
 		setTipoIdentificacion(tipoIdentificacion);
 		setIdentificacion(numeroIdentificacion);
 		setCorreoInstitucional(correoInstitucional);
@@ -28,6 +30,7 @@ public final class CoordinadorDomain extends PersonaEncargadaDomain {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setNombre(UtilText.getDefaultValue());
+		setTipoUsuario(TipoUsuarioDomain.getDefaultObject());
 		setTipoIdentificacion(TipoIdentificacionDomain.getDefaultObject());
 		setIdentificacion(UtilText.getDefaultValue());
 		setCorreoInstitucional(UtilMail.getDefaultValueMail());
@@ -106,6 +109,14 @@ public final class CoordinadorDomain extends PersonaEncargadaDomain {
 	private final void   setNumeroCelular(String numeroCelular) {
 		this.numeroCelular = UtilText.applyTrim(numeroCelular);
 		
+	}
+	
+	public final TipoUsuarioDomain getTipoUsuario() {
+		return tipoUsuario;
+	}
+	
+	private final void setTipoUsuario(TipoUsuarioDomain tipoUsuario) {
+		this.tipoUsuario = UtilObject.getDefault(tipoUsuario, TipoUsuarioDomain.getDefaultObject());
 	}
 
 
