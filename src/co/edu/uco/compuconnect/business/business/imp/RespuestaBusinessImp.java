@@ -3,7 +3,7 @@ package co.edu.uco.compuconnect.business.business.imp;
 import java.util.List;
 
 import co.edu.uco.compuconnect.business.business.RespuestaBusiness;
-import co.edu.uco.compuconnect.business.business.RespuestaDomain;
+import co.edu.uco.compuconnect.business.domain.RespuestaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 
 public final class RespuestaBusinessImp implements RespuestaBusiness{
