@@ -34,7 +34,7 @@ public final class PeriodoFuncionamientoBusinessImp implements PeriodoFuncionami
 
 	@Override
 	public void eliminar(PeriodoFuncionamientoDomain datosEliminacionPeriodoFuncionamiento) {
-		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosEliminacionPeriodoFuncionamiento));
+		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosEliminacionPeriodoFuncionamiento);
 		daoFactory.getPeriodoFuncionamientoDAO().update(entity);
 		
 	}

@@ -36,6 +36,5 @@ public final class DestinatarioNotificacionBusinessImp implements DestinatarioNo
 		
 	}
 
-	
 
 }

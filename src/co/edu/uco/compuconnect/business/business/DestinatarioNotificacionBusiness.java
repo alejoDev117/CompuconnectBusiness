@@ -1,12 +1,18 @@
 package co.edu.uco.compuconnect.business.business;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.domain.DestinatarioNotificacionDomain;
+import co.edu.uco.compuconnect.business.domain.DetalleReservaDomain;
 
 public interface  DestinatarioNotificacionBusiness {
-
-	void enviar(DestinatarioNotificacionDomain datosEnvioDestinatarioNotificacion);
 	
-	void generar(DestinatarioNotificacionDomain datosCreacionDestinatarioNotificacion);
+	void crear(DestinatarioNotificacionDomain datosCreacionDestinatarioNotificacion);
+	
+	List<DestinatarioNotificacionDomain> consultar(DestinatarioNotificacionDomain datosFiltroDestinatarioNotificacion);
+	
+	void eliminar(DestinatarioNotificacionDomain datosEliminacionDestinatarioNotificacion);
+	
 	
 	
 }
