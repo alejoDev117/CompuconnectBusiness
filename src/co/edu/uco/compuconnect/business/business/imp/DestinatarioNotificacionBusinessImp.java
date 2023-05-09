@@ -1,8 +1,12 @@
 package co.edu.uco.compuconnect.business.business.imp;
 
+import java.util.List;
+
+import co.edu.uco.compuconnect.business.assembler.concrete.DestinatarioNotificacionAssembler;
 import co.edu.uco.compuconnect.business.business.DestinatarioNotificacionBusiness;
 import co.edu.uco.compuconnect.business.business.DestinatarioNotificacionDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.DestinatarioNotificacionEntity;
 
 public final class DestinatarioNotificacionBusinessImp implements DestinatarioNotificacionBusiness{
 	
@@ -13,18 +17,25 @@ public final class DestinatarioNotificacionBusinessImp implements DestinatarioNo
 	}
 
 	@Override
-	public void enviar(DestinatarioNotificacionDomain datosEnvioDestinatarioNotificacion) {
-		// TODO Auto-generated method stub
-		
+	public void crear(DestinatarioNotificacionDomain datosCreacionDestinatarioNotificacion) {
+		final DestinatarioNotificacionEntity entity = DestinatarioNotificacionAssembler.getInstance().toEntityFromDomain(datosCreacionDestinatarioNotificacion);
+		daoFactory.getDestinatarioNotificacionDAO().create(entity);
 	}
 
 	@Override
-	public void generar(DestinatarioNotificacionDomain datosCreacionDestinatarioNotificacion) {
-		// TODO Auto-generated method stub
+	public List<DestinatarioNotificacionDomain> consultar(DestinatarioNotificacionDomain datosFiltroDestinatario) {
+		final DestinatarioNotificacionEntity entity = DestinatarioNotificacionAssembler.getInstance().toEntityFromDomain(datosFiltroDestinatario);
+		final List<DestinatarioNotificacionEntity> result = daoFactory.getDestinatarioNotificacionDAO().read(entity);
+		return null;
+	}
+
+	@Override
+	public void eliminar(DestinatarioNotificacionDomain datosEliminacionDestinatarioNotificacion) {
+		final DestinatarioNotificacionEntity entity = DestinatarioNotificacionAssembler.getInstance().toEntityFromDomain(datosEliminacionDestinatarioNotificacion);
+		daoFactory.getDestinatarioNotificacionDAO().delete(entity);
 		
 	}
-	
-	
+
 	
 
 }

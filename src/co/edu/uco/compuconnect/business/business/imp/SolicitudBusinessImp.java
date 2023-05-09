@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.SolicitudAssembler;
 import co.edu.uco.compuconnect.business.business.SolicitudBusiness;
 import co.edu.uco.compuconnect.business.domain.SolicitudDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.SolicitudEntity;
 
 public final  class SolicitudBusinessImp implements SolicitudBusiness{
 	
@@ -18,21 +20,24 @@ public final  class SolicitudBusinessImp implements SolicitudBusiness{
 
 	@Override
 	public void crear(SolicitudDomain datosSolicitud) {
-		// TODO Auto-generated method stub
+		final SolicitudEntity entity = SolicitudAssembler.getInstance().toEntityFromDomain(datosSolicitud);
+		daoFactory.getSolicitudDAO().create(entity);
 		
 	}
 
 
 	@Override
 	public void enviar(SolicitudDomain datosEnvioSolicitud) {
-		// TODO Auto-generated method stub
+		final SolicitudEntity entity = SolicitudAssembler.getInstance().toEntityFromDomain(datosEnvioSolicitud);
+		daoFactory.getSolicitudDAO().update(entity);
 		
 	}
 
 
 	@Override
 	public List<SolicitudDomain> consultar(SolicitudDomain datosFiltroSolicitud) {
-		// TODO Auto-generated method stub
+		final SolicitudEntity entity = SolicitudAssembler.getInstance().toEntityFromDomain(datosFiltroSolicitud);
+		final List<SolicitudEntity> result = daoFactory.getSolicitudDAO().read(entity);
 		return null;
 	}
 	

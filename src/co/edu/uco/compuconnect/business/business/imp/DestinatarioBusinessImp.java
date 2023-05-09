@@ -2,9 +2,13 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.CoordinadorAssembler;
+import co.edu.uco.compuconnect.business.assembler.concrete.DestinatarioAssembler;
 import co.edu.uco.compuconnect.business.business.DestinatarioBusiness;
 import co.edu.uco.compuconnect.business.domain.DestinatarioDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.CoordinadorEntity;
+import co.edu.uco.compuconnect.entities.DestinatarioEntity;
 
 public final class DestinatarioBusinessImp implements DestinatarioBusiness{
 	
@@ -16,25 +20,30 @@ public final class DestinatarioBusinessImp implements DestinatarioBusiness{
 
 	@Override
 	public void registrar(DestinatarioDomain datosRegistroDestinatario) {
-		// TODO Auto-generated method stub
+		final DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosRegistroDestinatario);
+		daoFactory.getDestinatarioDAO().generate(entity);
 		
 	}
 
 	@Override
 	public void modificar(DestinatarioDomain datosModificacionDestintario) {
-		// TODO Auto-generated method stub
+		final DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosModificacionDestintario);
+		daoFactory.getDestinatarioDAO().update(entity);
+
 		
 	}
 
 	@Override
 	public List<DestinatarioDomain> consultar(DestinatarioDomain datosFiltroDestinatario) {
-		// TODO Auto-generated method stub
+		DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosFiltroDestinatario);
+		daoFactory.getDestinatarioDAO();
 		return null;
 	}
 
 	@Override
 	public void eliminar(DestinatarioDomain datosEliminacionDestinatario) {
-		// TODO Auto-generated method stub
+		final DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosEliminacionDestinatario);
+		daoFactory.getDestinatarioDAO().delete(entity);
 		
 	}
 	

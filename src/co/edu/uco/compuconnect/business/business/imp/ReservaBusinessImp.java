@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.ReservaAssembler;
 import co.edu.uco.compuconnect.business.business.ReservaBusiness;
 import co.edu.uco.compuconnect.business.domain.ReservaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.ReservaEntity;
 
 public final class ReservaBusinessImp implements ReservaBusiness{
 	
@@ -16,25 +18,29 @@ public final class ReservaBusinessImp implements ReservaBusiness{
 
 	@Override
 	public void generar(ReservaDomain datosReserva) {
-		// TODO Auto-generated method stub
+		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosReserva);
+		daoFactory.getReservaDAO().create(entity);
 		
 	}
 
 	@Override
 	public void modificar(ReservaDomain datosModReserva) {
-		// TODO Auto-generated method stub
+		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosModReserva);
+		daoFactory.getReservaDAO().update(entity);
 		
 	}
 
 	@Override
 	public void cancelar(ReservaDomain datosEliminacionReserva) {
-		// TODO Auto-generated method stub
+		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosEliminacionReserva);
+		daoFactory.getReservaDAO().delete(entity);
 		
 	}
 
 	@Override
 	public List<ReservaDomain> consultar(ReservaDomain datosFiltroReserva) {
-		// TODO Auto-generated method stub
+		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosFiltroReserva);
+		final List<ReservaEntity> result = daoFactory.getReservaDAO().read(entity);
 		return null;
 	}
 	

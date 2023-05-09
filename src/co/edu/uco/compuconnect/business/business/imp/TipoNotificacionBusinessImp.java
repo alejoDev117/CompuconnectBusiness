@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.TipoNotificacionAssembler;
 import co.edu.uco.compuconnect.business.business.TipoNotificacionBusiness;
 import co.edu.uco.compuconnect.business.domain.TipoNotificacionDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.TipoNotificacionEntity;
 
 public final class TipoNotificacionBusinessImp implements TipoNotificacionBusiness{
 	
@@ -16,7 +18,8 @@ public final class TipoNotificacionBusinessImp implements TipoNotificacionBusine
 
 	@Override
 	public List<TipoNotificacionDomain> consultar(TipoNotificacionDomain datosFiltroTipoNotificacion) {
-		// TODO Auto-generated method stub
+		final TipoNotificacionEntity entity = TipoNotificacionAssembler.getInstance().toEntityFromDomain(datosFiltroTipoNotificacion);
+		final List<TipoNotificacionEntity> result = daoFactory.getTipoNotificacionDAO().read(entity);
 		return null;
 	}
 	

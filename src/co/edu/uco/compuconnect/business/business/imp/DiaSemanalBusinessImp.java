@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.DiaSemanalAssembler;
 import co.edu.uco.compuconnect.business.business.DiaSemanalBusiness;
 import co.edu.uco.compuconnect.business.domain.DiaSemanalDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.DiaSemanalEntity;
 
 public final class DiaSemanalBusinessImp implements DiaSemanalBusiness{
 	
@@ -17,7 +19,8 @@ public final class DiaSemanalBusinessImp implements DiaSemanalBusiness{
 
 	@Override
 	public List<DiaSemanalDomain> consultar(DiaSemanalDomain datosFiltroDiaSemanal) {
-		// TODO Auto-generated method stub
+		final DiaSemanalEntity entity = DiaSemanalAssembler.getInstance().toEntityFromDomain(datosFiltroDiaSemanal);
+		final List<DiaSemanalEntity> result = daoFactory.getDiaSemanalDAO().read(entity);
 		return null;
 	}
 

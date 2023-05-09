@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.DiaFestivoAssembler;
 import co.edu.uco.compuconnect.business.business.DiaFestivoBusiness;
 import co.edu.uco.compuconnect.business.domain.DiaFestivoDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.DiaFestivoEntity;
 
 public final class DiaFestivoBusinessImp implements DiaFestivoBusiness{
 	
@@ -16,7 +18,8 @@ public final class DiaFestivoBusinessImp implements DiaFestivoBusiness{
 
 	@Override
 	public List<DiaFestivoDomain> consultar(DiaFestivoDomain datosFiltroDiaFestivo) {
-		// TODO Auto-generated method stub
+		final DiaFestivoEntity entity = DiaFestivoAssembler.getInstance().toEntityFromDomain(datosFiltroDiaFestivo);
+		final List<DiaFestivoEntity> result = daoFactory.getDiaFestivoDAO().read(entity);
 		return null;
 	}
 
