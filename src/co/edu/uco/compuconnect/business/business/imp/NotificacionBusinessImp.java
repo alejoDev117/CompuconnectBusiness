@@ -1,8 +1,10 @@
 package co.edu.uco.compuconnect.business.business.imp;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.NotificacionAssembler;
 import co.edu.uco.compuconnect.business.business.NotificacionBusiness;
 import co.edu.uco.compuconnect.business.domain.NotificacionDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.NotificacionEntity;
 
 public final class NotificacionBusinessImp implements NotificacionBusiness{
 	
@@ -16,7 +18,8 @@ public final class NotificacionBusinessImp implements NotificacionBusiness{
 
 	@Override
 	public void generar(NotificacionDomain datosNotificacion) {
-		// TODO Auto-generated method stub
+		final NotificacionEntity entity = NotificacionAssembler.getInstance().toEntityFromDomain(datosNotificacion);
+		daoFactory.getNotificacionDAO().create(entity);
 		
 	}
 	

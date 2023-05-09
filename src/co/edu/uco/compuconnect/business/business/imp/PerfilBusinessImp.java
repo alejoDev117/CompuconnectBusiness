@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.PerfilAssembler;
 import co.edu.uco.compuconnect.business.business.PerfilBusiness;
 import co.edu.uco.compuconnect.business.domain.PerfilDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.PerfilEntity;
 
 public final class PerfilBusinessImp implements PerfilBusiness{
 	
@@ -18,28 +20,32 @@ public final class PerfilBusinessImp implements PerfilBusiness{
 
 	@Override
 	public void crear(PerfilDomain datosPerfil) {
-		// TODO Auto-generated method stub
+		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(datosPerfil);
+		daoFactory.getPerfilDAO().create(entity);
 		
 	}
 
 
 	@Override
 	public void actualizar(PerfilDomain datosActualizarPerfil) {
-		// TODO Auto-generated method stub
+		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(datosActualizarPerfil);
+		daoFactory.getPerfilDAO().update(entity);
 		
 	}
 
 
 	@Override
 	public void eliminar(PerfilDomain datosBorrarPerfil) {
-		// TODO Auto-generated method stub
+		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(datosBorrarPerfil);
+		daoFactory.getPerfilDAO().delete(entity);
 		
 	}
 
 
 	@Override
 	public List<PerfilDomain> consultar(PerfilDomain datosFiltroPerfil) {
-		// TODO Auto-generated method stub
+		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(datosFiltroPerfil);
+		final List<PerfilEntity> result = daoFactory.getPerfilDAO().read(entity);
 		return null;
 	}
 	

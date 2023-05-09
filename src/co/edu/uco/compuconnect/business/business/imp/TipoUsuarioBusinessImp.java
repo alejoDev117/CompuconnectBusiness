@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.TipoUsuarioAssembler;
 import co.edu.uco.compuconnect.business.business.TipoUsuarioBusiness;
 import co.edu.uco.compuconnect.business.domain.TipoUsuarioDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.TipoUsuarioEntity;
 
 public final  class TipoUsuarioBusinessImp implements TipoUsuarioBusiness{
 	
@@ -16,7 +18,8 @@ public final  class TipoUsuarioBusinessImp implements TipoUsuarioBusiness{
 
 	@Override
 	public List<TipoUsuarioDomain> consultar(TipoUsuarioDomain datosFiltroTipoUsuario) {
-		// TODO Auto-generated method stub
+		final TipoUsuarioEntity entity = TipoUsuarioAssembler.getInstance().toEntityFromDomain(datosFiltroTipoUsuario);
+		final List<TipoUsuarioEntity> result = daoFactory.getTipoUsuarioDAO().read(entity);
 		return null;
 	}
 	

@@ -2,9 +2,13 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.EstadoNotificacionAssembler;
+import co.edu.uco.compuconnect.business.assembler.concrete.EstadoPeriodoFuncionamientoAssembler;
 import co.edu.uco.compuconnect.business.business.EstadoPeriodoFuncionamientoBusiness;
 import co.edu.uco.compuconnect.business.domain.EstadoPeriodoFuncionamientoDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.EstadoNotificacionEntity;
+import co.edu.uco.compuconnect.entities.EstadoPeriodoFuncionamientoEntity;
 
 public final class EstadoPeriodoFuncionamientoBusinessImp implements EstadoPeriodoFuncionamientoBusiness{
 
@@ -17,7 +21,8 @@ public final class EstadoPeriodoFuncionamientoBusinessImp implements EstadoPerio
 	@Override
 	public List<EstadoPeriodoFuncionamientoDomain> consultar(
 			EstadoPeriodoFuncionamientoDomain datosFiltroFuncionamiento) {
-		// TODO Auto-generated method stub
+		final EstadoPeriodoFuncionamientoEntity entity = EstadoPeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosFiltroFuncionamiento);
+		final List<EstadoPeriodoFuncionamientoEntity> result = daoFactory.getEstadoPeriodoFunicionamientoDAO().read(entity);
 		return null;
 	}
 	

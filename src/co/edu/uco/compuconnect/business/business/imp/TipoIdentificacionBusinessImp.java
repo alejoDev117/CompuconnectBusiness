@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.TipoIdentificacionAssembler;
 import co.edu.uco.compuconnect.business.business.TipoIdentificacionBusiness;
 import co.edu.uco.compuconnect.business.domain.TipoIdentificacionDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.TipoIdentificacionEntity;
 
 public final class TipoIdentificacionBusinessImp implements TipoIdentificacionBusiness{
 	
@@ -16,7 +18,8 @@ public final class TipoIdentificacionBusinessImp implements TipoIdentificacionBu
 
 	@Override
 	public List<TipoIdentificacionDomain> consultar(TipoIdentificacionDomain datosFiltroTipoIdentificacion) {
-		// TODO Auto-generated method stub
+		final TipoIdentificacionEntity entity = TipoIdentificacionAssembler.getInstance().toEntityFromDomain(datosFiltroTipoIdentificacion);
+		final List<TipoIdentificacionEntity> result = daoFactory.getTipoIdentificacionDAO().read(entity);
 		return null;
 	}
 	

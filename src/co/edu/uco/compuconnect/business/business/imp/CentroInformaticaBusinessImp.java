@@ -7,6 +7,7 @@ import co.edu.uco.compuconnect.business.assembler.concrete.CentroInformaticaAsse
 import co.edu.uco.compuconnect.business.business.CentroInformaticaBusiness;
 import co.edu.uco.compuconnect.business.domain.CentroInformaticaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.CentroInformaticaEntity;
 
 public final class CentroInformaticaBusinessImp implements CentroInformaticaBusiness{
 
@@ -23,8 +24,9 @@ public final class CentroInformaticaBusinessImp implements CentroInformaticaBusi
 	}
 
 	@Override
-	public final  List<CentroInformaticaDomain> consultar(final CentroInformaticaDomain identificador) {
-		// TODO Auto-generated method stub
+	public final  List<CentroInformaticaDomain> consultar(final CentroInformaticaDomain datosFiltroCentroInformatica) {
+		final CentroInformaticaEntity entity = CentroInformaticaAssembler.getInstance().toEntityFromDomain(datosFiltroCentroInformatica);
+		final List<CentroInformaticaEntity> result = daoFactory.getCentroInformaticaDAO().read(entity);
 		return null;
 	}
 

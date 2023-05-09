@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.HorarioPersonaEncargadaAssembler;
 import co.edu.uco.compuconnect.business.business.HorarioPersonaEncargadaBusiness;
 import co.edu.uco.compuconnect.business.domain.HorarioPersonaEncargadaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.HorarioPersonaEncargadaEntity;
 
 public final class HorarioPersonaEncargadaBusinessImp implements HorarioPersonaEncargadaBusiness{
 	
@@ -18,21 +20,23 @@ public final class HorarioPersonaEncargadaBusinessImp implements HorarioPersonaE
 
 	@Override
 	public void asignar(HorarioPersonaEncargadaDomain datosHorario) {
-		// TODO Auto-generated method stub
-		
+		final HorarioPersonaEncargadaEntity entity = HorarioPersonaEncargadaAssembler.getInstance().toEntityFromDomain(datosHorario);
+		daoFactory.getHorarioPersonaEncargadaDAO().create(entity);
 	}
 
 
 	@Override
 	public void eliminar(HorarioPersonaEncargadaDomain datosEliminacionHorario) {
-		// TODO Auto-generated method stub
+		final HorarioPersonaEncargadaEntity entity = HorarioPersonaEncargadaAssembler.getInstance().toEntityFromDomain(datosEliminacionHorario);
+		daoFactory.getHorarioPersonaEncargadaDAO().delete(entity);
 		
 	}
 
 
 	@Override
 	public List<HorarioPersonaEncargadaDomain> consultar(HorarioPersonaEncargadaDomain datosFiltroHorario) {
-		// TODO Auto-generated method stub
+		final HorarioPersonaEncargadaEntity entity = HorarioPersonaEncargadaAssembler.getInstance().toEntityFromDomain(datosFiltroHorario);
+		final List<HorarioPersonaEncargadaEntity> result = daoFactory.getHorarioPersonaEncargadaDAO().read(entity);
 		return null;
 	}
 	
