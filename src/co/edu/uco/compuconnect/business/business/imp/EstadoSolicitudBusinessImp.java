@@ -22,8 +22,7 @@ public final class EstadoSolicitudBusinessImp implements EstadoSolicitudBusiness
 	public List<EstadoSolicitudDomain> consultar(EstadoSolicitudDomain datosFiltroSolicitud) {
 		final EstadoSolicitudEntity entity = EstadoSolicitudAssembler.getInstance().toEntityFromDomain(datosFiltroSolicitud);
 		final List<EstadoSolicitudEntity> result = daoFactory.getEstadoSolicitudDAO().read(entity);
-		return null;
-	}
+		return EstadoSolicitudAssembler.getInstance().toDomainListFromEntityList(result);
 	
 	
 	

@@ -38,7 +38,7 @@ public final class RespuestaBusinessImp implements RespuestaBusiness{
 	public List<RespuestaDomain> consultar(RespuestaDomain datosFiltroRespuesta) {
 		final RespuestaEntity entity = RespuestaAssembler.getInstance().toEntityFromDomain(datosFiltroRespuesta);
 		final List<RespuestaEntity> result = daoFactory.getRespuestaDAO().read(entity);
-		return null;
+		return RespuestaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

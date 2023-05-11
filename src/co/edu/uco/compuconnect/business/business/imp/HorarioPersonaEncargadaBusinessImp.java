@@ -37,7 +37,7 @@ public final class HorarioPersonaEncargadaBusinessImp implements HorarioPersonaE
 	public List<HorarioPersonaEncargadaDomain> consultar(HorarioPersonaEncargadaDomain datosFiltroHorario) {
 		final HorarioPersonaEncargadaEntity entity = HorarioPersonaEncargadaAssembler.getInstance().toEntityFromDomain(datosFiltroHorario);
 		final List<HorarioPersonaEncargadaEntity> result = daoFactory.getHorarioPersonaEncargadaDAO().read(entity);
-		return null;
+		return HorarioPersonaEncargadaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

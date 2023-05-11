@@ -34,7 +34,7 @@ public final class BuzonSolicitudBusinessImp implements BuzonSolicitudBusiness{
 	public List<BuzonSolicitudDomain> consultar(BuzonSolicitudDomain datosFiltroBuzonSolicitud) {
 		final BuzonSolicitudEntity entity = BuzonSolicitudAssembler.getInstance().toEntityFromDomain(datosFiltroBuzonSolicitud);
 		final List<BuzonSolicitudEntity> result = daoFactory.getBuzonSolicitudDAO().read(entity);
-		return null;
+		return BuzonSolicitudAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

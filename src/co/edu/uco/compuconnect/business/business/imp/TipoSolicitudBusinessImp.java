@@ -22,7 +22,7 @@ public final class TipoSolicitudBusinessImp implements TipoSolicitudBusiness{
 	public List<TipoSolicitudDomain> consultar(TipoSolicitudDomain datosFiltroTipoSolicitud) {
 		final TipoSolicitudEntity entity = TipoSolicitudAssembler.getInstance().toEntityFromDomain(datosFiltroTipoSolicitud);
 		final List<TipoSolicitudEntity> result = daoFactory.getTipoSolicitudDAO().read(entity);
-		return null;
+		return TipoSolicitudAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

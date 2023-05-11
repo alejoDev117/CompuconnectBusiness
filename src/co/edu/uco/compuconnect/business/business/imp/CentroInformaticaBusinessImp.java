@@ -27,7 +27,7 @@ public final class CentroInformaticaBusinessImp implements CentroInformaticaBusi
 	public final  List<CentroInformaticaDomain> consultar(final CentroInformaticaDomain datosFiltroCentroInformatica) {
 		final CentroInformaticaEntity entity = CentroInformaticaAssembler.getInstance().toEntityFromDomain(datosFiltroCentroInformatica);
 		final List<CentroInformaticaEntity> result = daoFactory.getCentroInformaticaDAO().read(entity);
-		return null;
+		return CentroInformaticaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 	@Override

@@ -34,7 +34,7 @@ public final class CoordinadorBusinessImp implements CoordinadorBusiness{
 	public List<CoordinadorDomain> consultar(CoordinadorDomain datosFiltroCoordiandor) {
 		final CoordinadorEntity entity = CoordinadorAssembler.getInstance().toEntityFromDomain(datosFiltroCoordiandor);
 		final List<CoordinadorEntity> result = daoFactory.getCoordinadorDAO().read(entity);
-		return null;
+		return CoordinadorAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 	@Override

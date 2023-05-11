@@ -38,7 +38,7 @@ public final class ContenidoBusinessImp implements ContenidoBusiness{
 	public List<ContenidoDomain> consultar(ContenidoDomain datosFiltroContenido) {
 		final ContenidoEntity entity = ContenidoAssembler.getInstance().toEntityFromDomain(datosFiltroContenido);
 		final List<ContenidoEntity> result = daoFactory.getContenidoDAO().read(entity);
-		return null;
+		return ContenidoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

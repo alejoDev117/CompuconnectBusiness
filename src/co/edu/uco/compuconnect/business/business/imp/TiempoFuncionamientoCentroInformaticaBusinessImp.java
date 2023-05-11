@@ -36,7 +36,7 @@ public final class TiempoFuncionamientoCentroInformaticaBusinessImp implements T
 			TiempoFuncionamientoCentroInformaticaDomain datosFiltroTiempoFuncionamientoCentroInformatica) {
 		final TiempoFuncionamientoCentroInformaticaEntity entity = TiempoFuncionamientoCentroInformaticaAssembler.getInstance().toEntityFromDomain(datosFiltroTiempoFuncionamientoCentroInformatica);
 		final List<TiempoFuncionamientoCentroInformaticaEntity> result = daoFactory.getTiempoFuncionamientoCentroInformaticaDAO().read(entity);
-		return null;
+		return TiempoFuncionamientoCentroInformaticaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

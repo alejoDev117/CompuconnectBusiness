@@ -46,7 +46,7 @@ public final class DetalleReservaBusinessImp implements DetalleReservaBusiness{
 	public List<DetalleReservaDomain> consultar(DetalleReservaDomain datosFiltroDetalleReserva) {
 		final DetalleReservaEntity entity = DetalleReservaAssembler.getInstance().toEntityFromDomain(datosFiltroDetalleReserva);
 		final List<DetalleReservaEntity> result = daoFactory.getDetalleReservaDAO().read(entity);
-		return null;
+		return DetalleReservaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

@@ -21,7 +21,7 @@ public final class DiaSemanalBusinessImp implements DiaSemanalBusiness{
 	public List<DiaSemanalDomain> consultar(DiaSemanalDomain datosFiltroDiaSemanal) {
 		final DiaSemanalEntity entity = DiaSemanalAssembler.getInstance().toEntityFromDomain(datosFiltroDiaSemanal);
 		final List<DiaSemanalEntity> result = daoFactory.getDiaSemanalDAO().read(entity);
-		return null;
+		return DiaSemanalAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 }

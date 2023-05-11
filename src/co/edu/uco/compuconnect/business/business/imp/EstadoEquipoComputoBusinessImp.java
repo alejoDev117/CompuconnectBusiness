@@ -20,7 +20,7 @@ public final class EstadoEquipoComputoBusinessImp implements EstadoEquipoComputo
 	public List<EstadoEquipoComputoDomain> consultar(EstadoEquipoComputoDomain datosFiltroEstadoEquipoComputo) {
 		final EstadoEquipoComputoEntity entity = EstadoEquipoComputoAssembler.getInstance().toEntityFromDomain(datosFiltroEstadoEquipoComputo);
 		final List<EstadoEquipoComputoEntity> result = daoFactory.getEstadoEquipoComputoDAO().read(entity);
-		return null;
+		return EstadoEquipoComputoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 }

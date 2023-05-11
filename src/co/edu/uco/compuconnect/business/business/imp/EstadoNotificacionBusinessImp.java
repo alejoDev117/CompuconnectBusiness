@@ -20,7 +20,7 @@ public final class EstadoNotificacionBusinessImp implements EstadoNotificacionBu
 	public List<EstadoNotificacionDomain> consultar(EstadoNotificacionDomain datosFiltroEstadoNotificacion) {
 		final EstadoNotificacionEntity entity = EstadoNotificacionAssembler.getInstance().toEntityFromDomain(datosFiltroEstadoNotificacion);
 		final List<EstadoNotificacionEntity> result = daoFactory.getEstadoNotificacionDAO().read(entity);
-		return null;
+		return EstadoNotificacionAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

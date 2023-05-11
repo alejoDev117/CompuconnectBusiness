@@ -42,7 +42,7 @@ public final class ExcepcionBusinessImp implements ExcepcionBusiness{
 	public List<ExcepcionDomain> consultar(ExcepcionDomain datosFiltroExcepcion) {
 		final ExcepcionEntity entity = ExcepcionAssembler.getInstance().toEntityFromDomain(datosFiltroExcepcion);
 		final List<ExcepcionEntity> result = daoFactory.getExcepcionDAO().read(entity);
-		return null;
+		return ExcepcionAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

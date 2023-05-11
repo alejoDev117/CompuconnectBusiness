@@ -20,7 +20,7 @@ public final class TipoNotificacionBusinessImp implements TipoNotificacionBusine
 	public List<TipoNotificacionDomain> consultar(TipoNotificacionDomain datosFiltroTipoNotificacion) {
 		final TipoNotificacionEntity entity = TipoNotificacionAssembler.getInstance().toEntityFromDomain(datosFiltroTipoNotificacion);
 		final List<TipoNotificacionEntity> result = daoFactory.getTipoNotificacionDAO().read(entity);
-		return null;
+		return TipoNotificacionAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

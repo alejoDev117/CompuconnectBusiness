@@ -20,7 +20,7 @@ public final class FrecuenciaBusinessImp implements FrecuenciaBusiness{
 	public List<FrecuenciaDomain> consultar(FrecuenciaDomain datosFiltroFrecuencia) {
 		final FrecuenciaEntity entity = FrecuenciaAssembler.getInstance().toEntityFromDomain(datosFiltroFrecuencia);
 		final List<FrecuenciaEntity> result = daoFactory.getFrecuenciaDAO().read(entity);
-		return null;
+		return FrecuenciaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

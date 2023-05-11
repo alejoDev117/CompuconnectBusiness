@@ -35,9 +35,10 @@ public final class DestinatarioBusinessImp implements DestinatarioBusiness{
 
 	@Override
 	public List<DestinatarioDomain> consultar(DestinatarioDomain datosFiltroDestinatario) {
-		DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosFiltroDestinatario);
-		daoFactory.getDestinatarioDAO();
-		return null;
+		final DestinatarioEntity entity = DestinatarioAssembler.getInstance().toEntityFromDomain(datosFiltroDestinatario);
+		List<DestinatarioEntity> resultEntityList = daoFactory.getDestinatarioDAO().read(entity);
+		return DestinatarioAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
+				
 	}
 
 	@Override

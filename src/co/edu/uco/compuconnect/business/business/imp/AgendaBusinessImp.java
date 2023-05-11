@@ -27,7 +27,7 @@ public final class AgendaBusinessImp implements AgendaBusiness{
 	public List<AgendaDomain> consultar(AgendaDomain datosFiltroAgenda) {
 		final AgendaEntity entity = AgendaAssembler.getInstance().toEntityFromDomain(datosFiltroAgenda);
 		final List<AgendaEntity> result = daoFactory.getAgendaDAO().read(entity);
-		return null;
+		return AgendaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 	@Override

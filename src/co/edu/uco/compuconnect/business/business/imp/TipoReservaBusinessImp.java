@@ -20,7 +20,7 @@ public final class TipoReservaBusinessImp implements TipoReservaBusiness{
 	public List<TipoReservaDomain> consultar(TipoReservaDomain datosFiltroTipoReserva) {
 		final TipoReservaEntity entity = TipoReservaAssembler.getInstance().toEntityFromDomain(datosFiltroTipoReserva);
 		final List<TipoReservaEntity> result = daoFactory.getTipoReservaDAO().read(entity);
-		return null;
+		return TipoReservaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

@@ -20,7 +20,7 @@ public final  class TipoUsuarioBusinessImp implements TipoUsuarioBusiness{
 	public List<TipoUsuarioDomain> consultar(TipoUsuarioDomain datosFiltroTipoUsuario) {
 		final TipoUsuarioEntity entity = TipoUsuarioAssembler.getInstance().toEntityFromDomain(datosFiltroTipoUsuario);
 		final List<TipoUsuarioEntity> result = daoFactory.getTipoUsuarioDAO().read(entity);
-		return null;
+		return TipoUsuarioAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

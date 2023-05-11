@@ -43,7 +43,7 @@ public final class PeriodoFuncionamientoBusinessImp implements PeriodoFuncionami
 	public List<PeriodoFuncionamientoDomain> consultar(PeriodoFuncionamientoDomain datosFiltroPeriodoFuncionamiento) {
 		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosFiltroPeriodoFuncionamiento);
 		final List<PeriodoFuncionamientoEntity> result =daoFactory.getPeriodoFuncionamientoDAO().read(entity);
-		return null;
+		return PeriodoFuncionamientoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

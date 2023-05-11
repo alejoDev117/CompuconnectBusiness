@@ -41,7 +41,7 @@ public final class PersonaEncargadaBusinessImp implements PersonaEncargadaBusine
 	public List<PersonaEncargadaDomain> consultar(PersonaEncargadaDomain datosFiltroPersonaEncargada) {
 		final PersonaEncargadaEntity entity = PersonaEncargadaAssembler.getInstance().toEntityFromDomain(datosFiltroPersonaEncargada);
 		final List<PersonaEncargadaEntity> result = daoFactory.getPersonaEncargadaDAO().read(entity);
-		return null;
+		return PersonaEncargadaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

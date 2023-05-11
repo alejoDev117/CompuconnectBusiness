@@ -26,7 +26,7 @@ public final class DestinatarioNotificacionBusinessImp implements DestinatarioNo
 	public List<DestinatarioNotificacionDomain> consultar(DestinatarioNotificacionDomain datosFiltroDestinatario) {
 		final DestinatarioNotificacionEntity entity = DestinatarioNotificacionAssembler.getInstance().toEntityFromDomain(datosFiltroDestinatario);
 		final List<DestinatarioNotificacionEntity> result = daoFactory.getDestinatarioNotificacionDAO().read(entity);
-		return null;
+		return DestinatarioNotificacionAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 	@Override

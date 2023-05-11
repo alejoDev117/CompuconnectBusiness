@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.AgendaReservaAssembler;
 import co.edu.uco.compuconnect.business.business.AgendaReservaBusiness;
 import co.edu.uco.compuconnect.business.domain.AgendaReservaDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.AgendaReservaEntity;
 
 public class AgendaReservaBusinessImp implements AgendaReservaBusiness{
 	
@@ -16,19 +18,22 @@ public class AgendaReservaBusinessImp implements AgendaReservaBusiness{
 
 	@Override
 	public void crear(AgendaReservaDomain datosAgendaReserva) {
-		// TODO Auto-generated method stub
+		final AgendaReservaEntity entity = AgendaReservaAssembler.getInstance().toEntityFromDomain(datosAgendaReserva);
+		daoFactory.getAgendaReservaDAO().create(entity);
 		
 	}
 
 	@Override
 	public List<AgendaReservaDomain> consultar(AgendaReservaDomain datosFiltroAgendaReserva) {
-		// TODO Auto-generated method stub
-		return null;
+		final AgendaReservaEntity entity = AgendaReservaAssembler.getInstance().toEntityFromDomain(datosFiltroAgendaReserva);
+		final List<AgendaReservaEntity> resultEntityList = daoFactory.getAgendaReservaDAO().read(entity);
+		return AgendaReservaAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
 	public void eliminar(AgendaReservaDomain datosEliminacionAgendaReserva) {
-		// TODO Auto-generated method stub
+		final AgendaReservaEntity entity = AgendaReservaAssembler.getInstance().toEntityFromDomain(datosEliminacionAgendaReserva);
+		daoFactory.getAgendaReservaDAO().delete(entity);
 		
 	}
 

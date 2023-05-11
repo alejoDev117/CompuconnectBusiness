@@ -39,7 +39,7 @@ public final class ExcepcionAgendaBusinessImp implements ExcepcionAgendaBusiness
 	public List<ExcepcionAgendaDomain> consultar(ExcepcionAgendaDomain datosFiltroExcepcionAgenda) {
 		final ExcepcionAgendaEntity entity = ExcepcionAgendaAssembler.getInstance().toEntityFromDomain(datosFiltroExcepcionAgenda);
 		final List<ExcepcionAgendaEntity> result = daoFactory.getExcepcionAgendaDAO().read(entity);
-		return null;
+		return ExcepcionAgendaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

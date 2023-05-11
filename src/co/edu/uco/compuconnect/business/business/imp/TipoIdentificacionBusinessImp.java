@@ -20,7 +20,7 @@ public final class TipoIdentificacionBusinessImp implements TipoIdentificacionBu
 	public List<TipoIdentificacionDomain> consultar(TipoIdentificacionDomain datosFiltroTipoIdentificacion) {
 		final TipoIdentificacionEntity entity = TipoIdentificacionAssembler.getInstance().toEntityFromDomain(datosFiltroTipoIdentificacion);
 		final List<TipoIdentificacionEntity> result = daoFactory.getTipoIdentificacionDAO().read(entity);
-		return null;
+		return TipoIdentificacionAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

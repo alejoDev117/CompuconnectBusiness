@@ -38,7 +38,7 @@ public final class SoftwareEquipoComputoBusinessImp implements SoftwareEquipoCom
 	public List<SoftwareEquipoComputoDomain> consultar(SoftwareEquipoComputoDomain datosFiltroSoftwareEquipoComputo) {
 		final SoftwareEquipoComputoEntity entity = SoftwareEquipoComputoAssembler.getInstance().toEntityFromDomain(datosFiltroSoftwareEquipoComputo);
 		final List<SoftwareEquipoComputoEntity> result = daoFactory.getSoftwareEquipoComputoDAO().read(entity);
-		return null;
+		return SoftwareEquipoComputoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

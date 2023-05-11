@@ -2,10 +2,12 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.SolicitudPerfilAssembler;
 import co.edu.uco.compuconnect.business.business.SolicitudBusiness;
 import co.edu.uco.compuconnect.business.business.SolicitudPerfilBusiness;
 import co.edu.uco.compuconnect.business.domain.SolicitudPerfilDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.SolicitudPerfilEntity;
 
 public class SolicitudPerfilBusinessImp implements SolicitudPerfilBusiness{
 	
@@ -17,19 +19,22 @@ public class SolicitudPerfilBusinessImp implements SolicitudPerfilBusiness{
 
 	@Override
 	public void crear(SolicitudPerfilDomain datosSolicitudPerfil) {
-		// TODO Auto-generated method stub
-		
+		final SolicitudPerfilEntity entity = SolicitudPerfilAssembler.getInstance().toEntityFromDomain(datosSolicitudPerfil);
+		daoFactory.getSolicitudPerfilDAO().create(entity);
 	}
 
 	@Override
 	public List<SolicitudPerfilDomain> consultar(SolicitudPerfilDomain datosFiltroSolicitudPerfil) {
-		// TODO Auto-generated method stub
-		return null;
+		final SolicitudPerfilEntity entity = SolicitudPerfilAssembler.getInstance().toEntityFromDomain(datosFiltroSolicitudPerfil); 
+		final List<SolicitudPerfilEntity> resultEntityList = daoFactory.getSolicitudPerfilDAO().read(entity);
+		
+		return SolicitudPerfilAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
 	public void eliminar(SolicitudPerfilDomain datosEliminacionSolicitudPerfil) {
-		// TODO Auto-generated method stub
+		final SolicitudPerfilEntity entity = SolicitudPerfilAssembler.getInstance().toEntityFromDomain(datosEliminacionSolicitudPerfil); 
+		daoFactory.getSolicitudPerfilDAO().delete(entity);
 		
 	}
 	

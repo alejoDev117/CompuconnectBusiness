@@ -23,7 +23,7 @@ public final class EstadoPeriodoFuncionamientoBusinessImp implements EstadoPerio
 			EstadoPeriodoFuncionamientoDomain datosFiltroFuncionamiento) {
 		final EstadoPeriodoFuncionamientoEntity entity = EstadoPeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosFiltroFuncionamiento);
 		final List<EstadoPeriodoFuncionamientoEntity> result = daoFactory.getEstadoPeriodoFunicionamientoDAO().read(entity);
-		return null;
+		return EstadoPeriodoFuncionamientoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 }

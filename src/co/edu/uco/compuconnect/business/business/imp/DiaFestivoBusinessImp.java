@@ -20,7 +20,7 @@ public final class DiaFestivoBusinessImp implements DiaFestivoBusiness{
 	public List<DiaFestivoDomain> consultar(DiaFestivoDomain datosFiltroDiaFestivo) {
 		final DiaFestivoEntity entity = DiaFestivoAssembler.getInstance().toEntityFromDomain(datosFiltroDiaFestivo);
 		final List<DiaFestivoEntity> result = daoFactory.getDiaFestivoDAO().read(entity);
-		return null;
+		return DiaFestivoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 }

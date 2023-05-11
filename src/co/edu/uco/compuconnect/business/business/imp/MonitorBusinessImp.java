@@ -46,7 +46,7 @@ public final class MonitorBusinessImp implements MonitorBusiness{
 	public List<MonitorDomain> consultar(MonitorDomain datosFiltroMonitor) {
 		final MonitorEntity entity = MonitorAssembler.getInstance().toEntityFromDomain(datosFiltroMonitor);
 		final List<MonitorEntity> result = daoFactory.getMonitorDAO().read(entity);
-		return null;
+		return MonitorAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

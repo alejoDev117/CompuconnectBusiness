@@ -38,7 +38,7 @@ public final  class SolicitudBusinessImp implements SolicitudBusiness{
 	public List<SolicitudDomain> consultar(SolicitudDomain datosFiltroSolicitud) {
 		final SolicitudEntity entity = SolicitudAssembler.getInstance().toEntityFromDomain(datosFiltroSolicitud);
 		final List<SolicitudEntity> result = daoFactory.getSolicitudDAO().read(entity);
-		return null;
+		return SolicitudAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

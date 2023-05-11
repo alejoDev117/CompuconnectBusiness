@@ -38,7 +38,7 @@ public final class SoftwareBusinessImp implements SoftwareBusiness{
 	public List<SoftwareDomain> consultar(SoftwareDomain datosFiltroSoftware) {
 		final SoftwareEntity entity = SoftwareAssembler.getInstance().toEntityFromDomain(datosFiltroSoftware);
 		final List<SoftwareEntity> result = daoFactory.getSoftwareDAO().read(entity);
-		return null;
+		return SoftwareAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

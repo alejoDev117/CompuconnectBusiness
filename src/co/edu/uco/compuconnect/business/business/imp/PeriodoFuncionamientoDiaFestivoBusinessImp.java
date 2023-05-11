@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.PeriodoFuncionamientoAssembler;
 import co.edu.uco.compuconnect.business.business.PeriodoFuncionamientoBusiness;
 import co.edu.uco.compuconnect.business.domain.PeriodoFuncionamientoDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.PeriodoFuncionamientoEntity;
 
 public class PeriodoFuncionamientoDiaFestivoBusinessImp implements PeriodoFuncionamientoBusiness{
 	
@@ -16,26 +18,31 @@ public class PeriodoFuncionamientoDiaFestivoBusinessImp implements PeriodoFuncio
 
 	@Override
 	public void crear(PeriodoFuncionamientoDomain datosPeriodoFuncionamiento) {
-		// TODO Auto-generated method stub
+		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosPeriodoFuncionamiento);
+		daoFactory.getPeriodoFuncionamientoDAO().create(entity);
 		
 	}
 
 	@Override
 	public void modificar(PeriodoFuncionamientoDomain datosModificacionPeriodoFuncionamiento) {
-		// TODO Auto-generated method stub
+		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosModificacionPeriodoFuncionamiento);
+		daoFactory.getPeriodoFuncionamientoDAO().update(entity);
 		
 	}
 
 	@Override
 	public void eliminar(PeriodoFuncionamientoDomain datosEliminacionPeriodoFuncionamiento) {
-		// TODO Auto-generated method stub
+		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosEliminacionPeriodoFuncionamiento);
+		daoFactory.getPeriodoFuncionamientoDAO().delete(entity);
 		
 	}
 
 	@Override
 	public List<PeriodoFuncionamientoDomain> consultar(PeriodoFuncionamientoDomain datosFiltroPeriodoFuncionamiento) {
-		// TODO Auto-generated method stub
-		return null;
+		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosFiltroPeriodoFuncionamiento);
+		final List<PeriodoFuncionamientoEntity> resultEntityList = daoFactory.getPeriodoFuncionamientoDAO().read(entity);
+		
+		return PeriodoFuncionamientoAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 	
 	

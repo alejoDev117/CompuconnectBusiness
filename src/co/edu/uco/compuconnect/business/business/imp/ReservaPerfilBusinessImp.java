@@ -2,9 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.ReservaPerfilAssembler;
 import co.edu.uco.compuconnect.business.business.ReservaPerfilBusiness;
 import co.edu.uco.compuconnect.business.domain.ReservaPerfilDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.ReservaPerfilEntity;
 
 public class ReservaPerfilBusinessImp implements ReservaPerfilBusiness{
 	
@@ -16,19 +18,22 @@ public class ReservaPerfilBusinessImp implements ReservaPerfilBusiness{
 
 	@Override
 	public void crear(ReservaPerfilDomain datosReservaPerfil) {
-		// TODO Auto-generated method stub
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosReservaPerfil);
+		daoFactory.getReservaPerfil().create(entity);
 		
 	}
 
 	@Override
 	public List<ReservaPerfilDomain> consultar(ReservaPerfilDomain datosFiltroReservaPerfil) {
-		// TODO Auto-generated method stub
-		return null;
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosFiltroReservaPerfil);
+		final List<ReservaPerfilEntity> resultEntityList = daoFactory.getReservaPerfilDAO().read(entity);
+		return ReservaPerfilAssembler.getInsta().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
 	public void eliminar(ReservaPerfilDomain datosEliminacionReservaPerfil) {
-		// TODO Auto-generated method stub
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosEliminacionReservaPerfil);
+		daoFactory.getReservaPerfilDAO().delete(entity);
 		
 	}
 

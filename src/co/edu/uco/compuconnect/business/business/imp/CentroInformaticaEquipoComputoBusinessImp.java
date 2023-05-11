@@ -2,11 +2,15 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.business.assembler.concrete.CentroInformaticaEquipoComputoAssembler;
 import co.edu.uco.compuconnect.business.business.CentroInformaticaBusiness;
+import co.edu.uco.compuconnect.business.business.CentroInformaticaEquipoComputoBusiness;
 import co.edu.uco.compuconnect.business.domain.CentroInformaticaDomain;
+import co.edu.uco.compuconnect.business.domain.CentroInformaticaEquipoComputoDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.CentroInformaticaEquipoComputoEntity;
 
-public class CentroInformaticaEquipoComputoBusinessImp implements CentroInformaticaBusiness{
+public class CentroInformaticaEquipoComputoBusinessImp implements CentroInformaticaEquipoComputoBusiness{
 	
 	private DAOFactory daoFactory;
 	
@@ -14,27 +18,26 @@ public class CentroInformaticaEquipoComputoBusinessImp implements CentroInformat
 		this.daoFactory = daoFactory;
 	}
 
+
 	@Override
-	public void crear(CentroInformaticaDomain datosCentroInformatica) {
-		// TODO Auto-generated method stub
+	public void crear(CentroInformaticaEquipoComputoDomain datosCentroInformaticaEquipoComputo) {
+		final CentroInformaticaEquipoComputoEntity entity = CentroInformaticaEquipoComputoAssembler.getInstance().toEntityFromDomain(datosCentroInformaticaEquipoComputo);
+		daoFactory.getCentroInformaticaEquipoComputoDAO().create(entity);
+	}
+
+	@Override
+	public List<CentroInformaticaEquipoComputoDomain> consultar(
+			CentroInformaticaEquipoComputoDomain datosFiltroCentroInformaticaEquipoComputo) {
+		final CentroInformaticaEquipoComputoEntity entity = CentroInformaticaEquipoComputoAssembler.getInstance().toEntityFromDomain(datosFiltroCentroInformaticaEquipoComputo);
+		final List<CentroInformaticaEquipoComputoEntity> resultEntityList = daoFactory.getCentroInformaticaEquipoComputoDAO().read(entity);
 		
+		return CentroInformaticaEquipoComputoAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
-	public List<CentroInformaticaDomain> consultar(CentroInformaticaDomain datosFiltroCentroInformatica) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void modificar(CentroInformaticaDomain datosModCentroInformatica) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void eliminar(CentroInformaticaDomain identificadorEliminacionCentroInformatica) {
-		// TODO Auto-generated method stub
+	public void eliminar(CentroInformaticaEquipoComputoDomain datosEliminacionCentroInformaticaEquipoComputo) {
+		final CentroInformaticaEquipoComputoEntity entity = CentroInformaticaEquipoComputoAssembler.getInstance().toEntityFromDomain(datosEliminacionCentroInformaticaEquipoComputo);
+		daoFactory.getCentroInformaticaEquipoComputoDAO().delete(entity);
 		
 	}
 

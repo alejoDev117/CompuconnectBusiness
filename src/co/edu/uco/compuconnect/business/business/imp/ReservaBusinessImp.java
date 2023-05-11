@@ -41,7 +41,7 @@ public final class ReservaBusinessImp implements ReservaBusiness{
 	public List<ReservaDomain> consultar(ReservaDomain datosFiltroReserva) {
 		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosFiltroReserva);
 		final List<ReservaEntity> result = daoFactory.getReservaDAO().read(entity);
-		return null;
+		return ReservaAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	

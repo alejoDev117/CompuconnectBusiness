@@ -35,7 +35,7 @@ public final class EquipoComputoBusinessImp implements EquipoComputoBusiness{
 	public List<EquipoComputoDomain> consultar(EquipoComputoDomain datosFiltroEquipoComputo) {
 		final EquipoComputoEntity entity = EquipoComputoAssembler.getInstance().toEntityFromDomain(datosFiltroEquipoComputo);
 		final List<EquipoComputoEntity> result = daoFactory.getEquipoComputoDAO().read(entity);
-		return null;
+		return EquipoComputoAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 
 	@Override

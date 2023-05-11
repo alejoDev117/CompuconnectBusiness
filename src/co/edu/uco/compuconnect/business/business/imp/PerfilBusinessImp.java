@@ -46,7 +46,7 @@ public final class PerfilBusinessImp implements PerfilBusiness{
 	public List<PerfilDomain> consultar(PerfilDomain datosFiltroPerfil) {
 		final PerfilEntity entity = PerfilAssembler.getInstance().toEntityFromDomain(datosFiltroPerfil);
 		final List<PerfilEntity> result = daoFactory.getPerfilDAO().read(entity);
-		return null;
+		return PerfilAssembler.getInstance().toDomainListFromEntityList(result);
 	}
 	
 	
