@@ -50,6 +50,12 @@ public final class FrecuenciaAssembler implements Assembler<FrecuenciaDomain,Fre
 	public List<FrecuenciaDomain> toDomainListFromEntityList(List<FrecuenciaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<FrecuenciaDTO> toDTOListFromDomainList(List<FrecuenciaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 

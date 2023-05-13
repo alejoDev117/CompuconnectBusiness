@@ -50,5 +50,11 @@ public final class TipoNotificacionAssembler implements Assembler<TipoNotificaci
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+
+	@Override
+	public List<TipoNotificacionDTO> toDTOListFromDomainList(List<TipoNotificacionDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 	
 }

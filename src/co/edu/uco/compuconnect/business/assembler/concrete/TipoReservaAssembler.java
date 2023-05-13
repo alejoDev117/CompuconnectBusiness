@@ -43,6 +43,11 @@ public final class TipoReservaAssembler implements Assembler<TipoReservaDomain,T
 	public List<TipoReservaDomain> toDomainListFromEntityList(List<TipoReservaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<TipoReservaDTO> toDTOListFromDomainList(List<TipoReservaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 

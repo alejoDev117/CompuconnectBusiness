@@ -44,4 +44,9 @@ public class PerfilAssembler implements Assembler<PerfilDomain, PerfilDTO, Perfi
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+	@Override
+	public List<PerfilDTO> toDTOListFromDomainList(List<PerfilDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 }

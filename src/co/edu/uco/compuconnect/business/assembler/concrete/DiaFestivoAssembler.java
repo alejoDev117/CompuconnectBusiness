@@ -48,4 +48,10 @@ public final class DiaFestivoAssembler implements Assembler<DiaFestivoDomain,Dia
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+
+	@Override
+	public List<DiaFestivoDTO> toDTOListFromDomainList(List<DiaFestivoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 }

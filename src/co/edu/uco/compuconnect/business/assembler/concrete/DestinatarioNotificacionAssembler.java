@@ -47,5 +47,10 @@ public class DestinatarioNotificacionAssembler implements Assembler<Destinatario
 	public List<DestinatarioNotificacionDomain> toDomainListFromEntityList(List<DestinatarioNotificacionEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<DestinatarioNotificacionDTO> toDTOListFromDomainList(List<DestinatarioNotificacionDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 }

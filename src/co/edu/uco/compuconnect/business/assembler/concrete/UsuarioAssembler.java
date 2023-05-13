@@ -53,6 +53,11 @@ public final class UsuarioAssembler implements Assembler<UsuarioDomain,UsuarioDT
 	public List<UsuarioDomain> toDomainListFromEntityList(List<UsuarioEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<UsuarioDTO> toDTOListFromDomainList(List<UsuarioDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	

@@ -55,6 +55,12 @@ public final class PeriodoFuncionamientoAssembler implements Assembler<PeriodoFu
 	public List<PeriodoFuncionamientoDomain> toDomainListFromEntityList(List<PeriodoFuncionamientoEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<PeriodoFuncionamientoDTO> toDTOListFromDomainList(List<PeriodoFuncionamientoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 }

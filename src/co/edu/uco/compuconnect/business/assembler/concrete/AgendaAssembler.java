@@ -55,6 +55,12 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 	public List<AgendaDomain> toDomainListFromEntityList(List<AgendaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<AgendaDTO> toDTOListFromDomainList(List<AgendaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 

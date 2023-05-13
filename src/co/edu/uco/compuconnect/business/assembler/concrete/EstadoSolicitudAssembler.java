@@ -50,6 +50,12 @@ public final  class EstadoSolicitudAssembler implements Assembler<EstadoSolicitu
 	public List<EstadoSolicitudDomain> toDomainListFromEntityList(List<EstadoSolicitudEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<EstadoSolicitudDTO> toDTOListFromDomainList(List<EstadoSolicitudDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	

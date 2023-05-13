@@ -44,6 +44,11 @@ public class PersonaEncargadaAssembler implements Assembler<PersonaEncargadaDoma
 	public List<PersonaEncargadaDomain> toDomainListFromEntityList(List<PersonaEncargadaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<PersonaEncargadaDTO> toDTOListFromDomainList(List<PersonaEncargadaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 

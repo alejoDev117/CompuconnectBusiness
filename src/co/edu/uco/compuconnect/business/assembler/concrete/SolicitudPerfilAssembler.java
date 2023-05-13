@@ -48,6 +48,11 @@ public class SolicitudPerfilAssembler implements Assembler<SolicitudPerfilDomain
 	public List<SolicitudPerfilDomain> toDomainListFromEntityList(List<SolicitudPerfilEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<SolicitudPerfilDTO> toDTOListFromDomainList(List<SolicitudPerfilDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 }

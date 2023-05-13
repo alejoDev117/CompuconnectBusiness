@@ -51,4 +51,11 @@ public final class TipoSolicitudAssembler implements Assembler<TipoSolicitudDoma
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+
+
+	@Override
+	public List<TipoSolicitudDTO> toDTOListFromDomainList(List<TipoSolicitudDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 }

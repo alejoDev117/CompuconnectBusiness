@@ -44,6 +44,11 @@ public class ContenidoAssembler implements Assembler<ContenidoDomain, ContenidoD
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+	@Override
+	public List<ContenidoDTO> toDTOListFromDomainList(List<ContenidoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 	
 	
 }

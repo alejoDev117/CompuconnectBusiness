@@ -44,4 +44,9 @@ public class DestinatarioAssembler implements Assembler<DestinatarioDomain, Dest
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+	@Override
+	public List<DestinatarioDTO> toDTOListFromDomainList(List<DestinatarioDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 }

@@ -10,5 +10,6 @@ public interface Assembler <D , T , E>{
 	D toDomainFromEntity(E entity);
 
 	List<D> toDomainListFromEntityList(List<E> entityList);
+	List<T> toDTOListFromDomainList(List<D> domainList);
 	
 }

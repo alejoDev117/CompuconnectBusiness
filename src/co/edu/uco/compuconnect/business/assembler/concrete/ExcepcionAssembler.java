@@ -43,6 +43,11 @@ public final class ExcepcionAssembler implements Assembler<ExcepcionDomain,Excep
 	public List<ExcepcionDomain> toDomainListFromEntityList(List<ExcepcionEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<ExcepcionDTO> toDTOListFromDomainList(List<ExcepcionDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 }

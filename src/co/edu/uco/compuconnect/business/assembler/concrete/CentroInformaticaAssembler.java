@@ -50,4 +50,10 @@ public final class CentroInformaticaAssembler implements Assembler<CentroInforma
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
 
+
+	@Override
+	public List<CentroInformaticaDTO> toDTOListFromDomainList(List<CentroInformaticaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
 }

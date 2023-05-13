@@ -50,6 +50,12 @@ public final class EstadoNotificacionAssembler implements Assembler<EstadoNotifi
 	public List<EstadoNotificacionDomain> toDomainListFromEntityList(List<EstadoNotificacionEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<EstadoNotificacionDTO> toDTOListFromDomainList(List<EstadoNotificacionDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	

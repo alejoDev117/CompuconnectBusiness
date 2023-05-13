@@ -64,6 +64,13 @@ public final  class TiempoFuncionamientoCentroInformaticaAssembler implements As
 			List<TiempoFuncionamientoCentroInformaticaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<TiempoFuncionamientoCentroInformaticaDTO> toDTOListFromDomainList(
+			List<TiempoFuncionamientoCentroInformaticaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 }

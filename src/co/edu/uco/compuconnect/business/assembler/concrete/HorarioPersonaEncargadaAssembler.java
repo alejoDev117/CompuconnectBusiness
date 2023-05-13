@@ -52,6 +52,11 @@ public class HorarioPersonaEncargadaAssembler implements Assembler<HorarioPerson
 	public List<HorarioPersonaEncargadaDomain> toDomainListFromEntityList(List<HorarioPersonaEncargadaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+	@Override
+	public List<HorarioPersonaEncargadaDTO> toDTOListFromDomainList(List<HorarioPersonaEncargadaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	

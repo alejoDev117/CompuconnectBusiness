@@ -65,6 +65,12 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 	public List<ReservaDomain> toDomainListFromEntityList(List<ReservaEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<ReservaDTO> toDTOListFromDomainList(List<ReservaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	

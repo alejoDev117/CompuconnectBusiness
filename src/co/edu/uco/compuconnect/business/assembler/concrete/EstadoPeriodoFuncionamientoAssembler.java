@@ -51,6 +51,13 @@ public final class EstadoPeriodoFuncionamientoAssembler implements Assembler<Est
 			List<EstadoPeriodoFuncionamientoEntity> entityList) {
 		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
 	}
+
+
+	@Override
+	public List<EstadoPeriodoFuncionamientoDTO> toDTOListFromDomainList(
+			List<EstadoPeriodoFuncionamientoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
 	
 	
 	
