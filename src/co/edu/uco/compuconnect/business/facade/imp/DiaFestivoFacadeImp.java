@@ -38,7 +38,7 @@ public final class DiaFestivoFacadeImp implements DiaFestivoFacade{
 		}catch(final CompuconnectException exception) {
 			throw exception;
 		}catch(final Exception exception) {
-			throw CompuconnectBusinessException.create(DiaFestivoFacadeImpMessage.CONSULTAR_EXCEPCION_TECHNICAL_MESSAGE, DiaFestivoFacadeImpMessage.CONSULTAR_EXCEPCION_USER_MESSAGE, exception);
+			throw CompuconnectBusinessException.create(DiaFestivoFacadeImpMessage.CONSULTAR_EXCEPTION_TECHNICAL_MESSAGE, DiaFestivoFacadeImpMessage.CONSULTAR_EXCEPTION_USER_MESSAGE, exception);
 		}finally {
 			daoFactory.cerrarConexion();
 		}

@@ -37,7 +37,7 @@ public final class EstadoNotificacionFacadeImp implements EstadoNotificacionFaca
 		}catch(final CompuconnectException exception) {
 			throw exception;
 		}catch(final Exception exception) {
-			throw CompuconnectBusinessException.create(EstadoNotificacionFacadeImpMessage.CONSULTAR_EXCEPCION_TECHNICAL_MESSAGE, EstadoNotificacionFacadeImpMessage.CONSULTAR_EXCEPCION_USER_MESSAGE, exception);
+			throw CompuconnectBusinessException.create(EstadoNotificacionFacadeImpMessage.CONSULTAR_EXCEPTION_TECHNICAL_MESSAGE, EstadoNotificacionFacadeImpMessage.CONSULTAR_EXCEPTION_USER_MESSAGE, exception);
 		}finally {
 			daoFactory.cerrarConexion();
 		}

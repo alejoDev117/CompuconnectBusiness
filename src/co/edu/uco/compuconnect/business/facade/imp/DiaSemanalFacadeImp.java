@@ -35,7 +35,7 @@ public final class DiaSemanalFacadeImp implements DiaSemanalFacade{
 		}catch(final CompuconnectException exception) {
 			throw exception;
 		}catch(final Exception exception) {
-			throw CompuconnectBusinessException.create(DiaSemanalFacadeImpMessage.CONSULTAR_EXCEPCION_TECHNICAL_MESSAGE, DiaSemanalFacadeImpMessage.CONSULTAR_EXCEPCION_USER_MESSAGE, exception);
+			throw CompuconnectBusinessException.create(DiaSemanalFacadeImpMessage.CONSULTAR_EXCEPTION_TECHNICAL_MESSAGE, DiaSemanalFacadeImpMessage.CONSULTAR_EXCEPTION_USER_MESSAGE, exception);
 		}finally {
 			daoFactory.cerrarConexion();
 		}

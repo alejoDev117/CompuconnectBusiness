@@ -1,4 +1,4 @@
-package co.edu.uco.compuconnect.business.business;
+package co.edu.uco.compuconnect.business.facade;
 
 import java.util.List;
 
@@ -6,11 +6,12 @@ import co.edu.uco.compuconnect.business.domain.TipoIdentificacionDomain;
 import co.edu.uco.compuconnect.business.domain.TipoNotificacionDomain;
 import co.edu.uco.compuconnect.business.domain.TipoReservaDomain;
 import co.edu.uco.compuconnect.business.domain.TipoSolicitudDomain;
-import co.edu.uco.compuconnect.dto.TipoSolicitudDTO;
+import co.edu.uco.compuconnect.business.domain.TipoUsuarioDomain;
+import co.edu.uco.compuconnect.dto.TipoUsuarioDTO;
 
-public  interface TipoSolicitudBusiness {
+public  interface TipoUsuarioFacade {
 
-	List<TipoSolicitudDomain> consultar(TipoSolicitudDomain datosFiltroTipoSolicitud);
+	List<TipoUsuarioDTO> consultar(TipoUsuarioDTO dto);
 	
 	
 }

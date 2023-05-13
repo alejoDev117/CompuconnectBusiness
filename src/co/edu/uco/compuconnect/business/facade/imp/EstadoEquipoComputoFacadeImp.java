@@ -37,7 +37,7 @@ public final class EstadoEquipoComputoFacadeImp implements EstadoEquipoComputoFa
 	}catch(final CompuconnectException exception) {
 		throw exception;
 	}catch(final Exception exception) {
-		throw CompuconnectBusinessException.create(EstadoEquipoComputoFacadeImpMessage.CONSULTAR_EXCEPCION_TECHNICAL_MESSAGE, EstadoEquipoComputoFacadeImpMessage.CONSULTAR_EXCEPCION_USER_MESSAGE, exception);
+		throw CompuconnectBusinessException.create(EstadoEquipoComputoFacadeImpMessage.CONSULTAR_EXCEPTION_TECHNICAL_MESSAGE, EstadoEquipoComputoFacadeImpMessage.CONSULTAR_EXCEPTION_USER_MESSAGE, exception);
 	}finally {
 		daoFactory.cerrarConexion();
 	}

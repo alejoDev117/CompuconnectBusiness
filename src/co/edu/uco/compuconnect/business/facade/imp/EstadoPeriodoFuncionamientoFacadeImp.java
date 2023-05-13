@@ -35,7 +35,7 @@ public final class EstadoPeriodoFuncionamientoFacadeImp implements EstadoPeriodo
 		}catch(final CompuconnectException exception) {
 			throw exception;
 		}catch(final Exception exception) {
-			throw CompuconnectBusinessException.create(EstadoPeriodoFuncionamientoFacadeImpMessage.CONSULTAR_EXCEPCION_TECHNICAL_MESSAGE, EstadoPeriodoFuncionamientoFacadeImpMessage.CONSULTAR_EXCEPCION_USER_MESSAGE, exception);
+			throw CompuconnectBusinessException.create(EstadoPeriodoFuncionamientoFacadeImpMessage.CONSULTAR_EXCEPTION_TECHNICAL_MESSAGE, EstadoPeriodoFuncionamientoFacadeImpMessage.CONSULTAR_EXCEPTION_USER_MESSAGE, exception);
 		}finally {
 			daoFactory.cerrarConexion();
 		}

@@ -12,7 +12,7 @@ public final class TipoNotificacionBusinessImp implements TipoNotificacionBusine
 	
 	private DAOFactory daoFactory;
 	
-	TipoNotificacionBusinessImp(final DAOFactory daoFactory){
+	public TipoNotificacionBusinessImp(final DAOFactory daoFactory){
 		this.daoFactory = daoFactory;
 	}
 
