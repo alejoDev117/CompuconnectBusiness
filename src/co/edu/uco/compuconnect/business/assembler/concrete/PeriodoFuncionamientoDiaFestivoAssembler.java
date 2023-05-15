@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.PeriodoFuncionamientoDiaFestivoDomain;
 import co.edu.uco.compuconnect.dto.PeriodoFuncionamientoDiaFestivoDTO;
@@ -51,6 +53,22 @@ public final class PeriodoFuncionamientoDiaFestivoAssembler implements Assembler
 	public PeriodoFuncionamientoDiaFestivoDomain toDomainFromEntity(PeriodoFuncionamientoDiaFestivoEntity entity) {
 		return new PeriodoFuncionamientoDiaFestivoDomain(entity.getIdentificador(),PeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getPeriodoFuncionamiento()),
 				DiaFestivoAssembler.getInstance().toDomainFromEntity(entity.getDiaFestivo()));
+	}
+
+
+
+	@Override
+	public List<PeriodoFuncionamientoDiaFestivoDomain> toDomainListFromEntityList(
+			List<PeriodoFuncionamientoDiaFestivoEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+
+
+	@Override
+	public List<PeriodoFuncionamientoDiaFestivoDTO> toDTOListFromDomainList(
+			List<PeriodoFuncionamientoDiaFestivoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

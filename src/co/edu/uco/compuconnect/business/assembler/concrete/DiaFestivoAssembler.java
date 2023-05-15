@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.DiaFestivoDomain;
 import co.edu.uco.compuconnect.dto.DiaFestivoDTO;
@@ -38,6 +40,18 @@ public final class DiaFestivoAssembler implements Assembler<DiaFestivoDomain,Dia
 	@Override
 	public DiaFestivoDomain toDomainFromEntity(DiaFestivoEntity entity) {
 		return new DiaFestivoDomain(entity.getIdentificador(),entity.getNombre(),entity.getFecha());
+	}
+
+
+	@Override
+	public List<DiaFestivoDomain> toDomainListFromEntityList(List<DiaFestivoEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+
+	@Override
+	public List<DiaFestivoDTO> toDTOListFromDomainList(List<DiaFestivoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
 }

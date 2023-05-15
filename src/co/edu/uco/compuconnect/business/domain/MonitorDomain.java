@@ -6,15 +6,19 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilMail;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
+import co.edu.uco.compuconnect.dto.UsuarioDTO;
 
-public final class MonitorDomain extends PersonaEncargadaDomain {
+public final class MonitorDomain extends UsuarioDomain {
+	
+	private String numeroCelular;
 
 	private static final MonitorDomain DEAFAULT_OBJECT = new MonitorDomain();
 	
-	public MonitorDomain(UUID identificador, String nombre, TipoIdentificacionDomain tipoIdentificacion, String numeroIdentificacion, String correoInstitucional, String numeroCelular) {
+	public MonitorDomain(UUID identificador, String nombre, TipoIdentificacionDomain tipoIdentificacion, String numeroIdentificacion, String correoInstitucional, String numeroCelular, TipoUsuarioDomain tipoUsuario) {
 		super();
 		setIdentificador(identificador);
 		setNombre(nombre);
+		setTipoUsuario(tipoUsuario);
 		setTipoIdentificacion(tipoIdentificacion);
 		setIdentificacion(numeroIdentificacion);
 		setCorreoInstitucional(correoInstitucional);
@@ -27,6 +31,7 @@ public final class MonitorDomain extends PersonaEncargadaDomain {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setNombre(UtilText.getDefaultValue());
+		setTipoUsuario(TipoUsuarioDomain.getDefaultObject());
 		setTipoIdentificacion(TipoIdentificacionDomain.getDefaultObject());
 		setIdentificacion(UtilText.getDefaultValue());
 		setCorreoInstitucional(UtilMail.getDefaultValueMail());
@@ -104,9 +109,17 @@ public final class MonitorDomain extends PersonaEncargadaDomain {
 
 
 
-	private final void   setNumeroCelular(String numeroCelular) {
+	private final void  setNumeroCelular(String numeroCelular) {
 		this.numeroCelular = UtilText.applyTrim(numeroCelular);
 		
+	}
+	
+	public final TipoUsuarioDomain getTipoUsuario() {
+		return tipoUsuario;
+	}
+	
+	private final void setTipoUsuario(TipoUsuarioDomain tipoUsuario) {
+		this.tipoUsuario = UtilObject.getDefault(tipoUsuario, TipoUsuarioDomain.getDefaultObject());
 	}
 
 

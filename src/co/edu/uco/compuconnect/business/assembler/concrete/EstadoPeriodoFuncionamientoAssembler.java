@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.EstadoPeriodoFuncionamientoDomain;
 import co.edu.uco.compuconnect.dto.EstadoPeriodoFuncionamientoDTO;
@@ -41,6 +43,20 @@ public final class EstadoPeriodoFuncionamientoAssembler implements Assembler<Est
 	@Override
 	public EstadoPeriodoFuncionamientoDomain toDomainFromEntity(EstadoPeriodoFuncionamientoEntity entity) {
 		return new EstadoPeriodoFuncionamientoDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
+	}
+
+
+	@Override
+	public List<EstadoPeriodoFuncionamientoDomain> toDomainListFromEntityList(
+			List<EstadoPeriodoFuncionamientoEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+
+	@Override
+	public List<EstadoPeriodoFuncionamientoDTO> toDTOListFromDomainList(
+			List<EstadoPeriodoFuncionamientoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

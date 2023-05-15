@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.TipoUsuarioDomain;
 import co.edu.uco.compuconnect.dto.TipoUsuarioDTO;
@@ -35,6 +37,16 @@ public final class TipoUsuarioAssembler implements Assembler<TipoUsuarioDomain,T
 	@Override
 	public TipoUsuarioDomain toDomainFromEntity(TipoUsuarioEntity entity) {
 		return new TipoUsuarioDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
+	}
+
+	@Override
+	public List<TipoUsuarioDomain> toDomainListFromEntityList(List<TipoUsuarioEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+	@Override
+	public List<TipoUsuarioDTO> toDTOListFromDomainList(List<TipoUsuarioDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

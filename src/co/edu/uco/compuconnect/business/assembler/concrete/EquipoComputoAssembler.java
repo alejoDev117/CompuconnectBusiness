@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.EquipoComputoDomain;
 import co.edu.uco.compuconnect.dto.EquipoComputoDTO;
@@ -35,6 +37,16 @@ public final class EquipoComputoAssembler implements Assembler<EquipoComputoDoma
 	@Override
 	public EquipoComputoDomain toDomainFromEntity(EquipoComputoEntity entity) {
 		return new EquipoComputoDomain(entity.getIdentificador(),entity.getNombre(),EstadoEquipoComputoAssembler.getInstance().toDomainFromEntity(entity.getEstado()));
+	}
+
+	@Override
+	public List<EquipoComputoDomain> toDomainListFromEntityList(List<EquipoComputoEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+	@Override
+	public List<EquipoComputoDTO> toDTOListFromDomainList(List<EquipoComputoDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

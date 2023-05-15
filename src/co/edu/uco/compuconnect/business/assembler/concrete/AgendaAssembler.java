@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.AgendaDomain;
 import co.edu.uco.compuconnect.dto.AgendaDTO;
@@ -16,7 +18,8 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 
 
 	public static final Assembler<AgendaDomain, AgendaDTO, AgendaEntity> getInstance() {
-		return INSTANCE;}
+		return INSTANCE;
+	}
 
 
 	@Override
@@ -45,6 +48,18 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 	public AgendaDomain toDomainFromEntity(AgendaEntity entity) {
 		return new AgendaDomain(entity.getIdentificador(),PeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getPeriodoFuncionamiento()),
 				CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInformatica()),entity.getNombre());
+	}
+
+
+	@Override
+	public List<AgendaDomain> toDomainListFromEntityList(List<AgendaEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+
+	@Override
+	public List<AgendaDTO> toDTOListFromDomainList(List<AgendaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

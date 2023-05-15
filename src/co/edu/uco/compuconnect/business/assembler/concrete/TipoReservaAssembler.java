@@ -1,5 +1,7 @@
 package co.edu.uco.compuconnect.business.assembler.concrete;
 
+import java.util.List;
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.TipoReservaDomain;
 import co.edu.uco.compuconnect.dto.TipoReservaDTO;
@@ -35,6 +37,16 @@ public final class TipoReservaAssembler implements Assembler<TipoReservaDomain,T
 	@Override
 	public TipoReservaDomain toDomainFromEntity(TipoReservaEntity entity) {
 		return new TipoReservaDomain(entity.getIdentificador(),entity.getNombre(),entity.getDescripcion());
+	}
+
+	@Override
+	public List<TipoReservaDomain> toDomainListFromEntityList(List<TipoReservaEntity> entityList) {
+		return entityList.stream().map(entity -> toDomainFromEntity(entity)).toList();
+	}
+
+	@Override
+	public List<TipoReservaDTO> toDTOListFromDomainList(List<TipoReservaDomain> domainList) {
+		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
 	

@@ -11,14 +11,18 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 
-public final class ReservaDomain extends ContenidoDomain{
+public final class ReservaDomain{
 	
 	private static final ReservaDomain DEFAULT_OBJECT = new ReservaDomain();
+	private UUID identificador;
+	private UsuarioDomain autor;
 	private TipoReservaDomain tipoReserva;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private FrecuenciaDomain frecuencia;
 	private CentroInformaticaDomain centroInformatica;
+	private String descripcion;
+	private Date horaCreacion;
 	
 
 	public ReservaDomain(UUID identificador, UsuarioDomain autor, TipoReservaDomain tipoReserva, Date FechaInicio, Date FechaFin,FrecuenciaDomain frecuencia, CentroInformaticaDomain centroInformatica,String descripcion, Date horaCreacion) {
