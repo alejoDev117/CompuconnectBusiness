@@ -6,6 +6,10 @@ import co.edu.uco.compuconnect.dto.TiempoFuncionamientoCentroInformaticaDTO;
 
 public interface TiempoFuncionamientoCentroInformaticaFacade {
 	
+	void crear(TiempoFuncionamientoCentroInformaticaDTO dto);
+	
+	void eliminar(TiempoFuncionamientoCentroInformaticaDTO dto);
+	
 	List<TiempoFuncionamientoCentroInformaticaDTO> consultar(TiempoFuncionamientoCentroInformaticaDTO dto);
 
 }

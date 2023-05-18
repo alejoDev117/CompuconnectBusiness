@@ -2,16 +2,15 @@ package co.edu.uco.compuconnect.business.facade;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.dto.ExcepcionAgendaDTO;
+
+import co.edu.uco.compuconnect.dto.HorarioPersonaEncargadaDTO;
 
 public interface HorarioPersonaEncargadaFacade {
 	
-	void registrar(ExcepcionAgendaDTO dto);
+	void asignar(HorarioPersonaEncargadaDTO dto);
 	
-	void modificar(ExcepcionAgendaDTO dto);
+	void eliminar(HorarioPersonaEncargadaDTO dto);
 	
-	List<ExcepcionAgendaDTO> consultar(ExcepcionAgendaDTO dto);
-	
-	void eliminar(ExcepcionAgendaDTO dto);
+	List<HorarioPersonaEncargadaDTO> consultar(HorarioPersonaEncargadaDTO dto);
 
 }

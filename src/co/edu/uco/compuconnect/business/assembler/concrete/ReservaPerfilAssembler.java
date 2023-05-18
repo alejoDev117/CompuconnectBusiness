@@ -16,7 +16,7 @@ public class ReservaPerfilAssembler implements Assembler<ReservaPerfilDomain, Re
 		super();
 	}
 	
-	public static final Assembler<ReservaPerfilDomain, ReservaPerfilDTO, ReservaPerfilEntity> getInsta(){
+	public static final Assembler<ReservaPerfilDomain, ReservaPerfilDTO, ReservaPerfilEntity> getInstance(){
 		return INSTANCE;
 	}
 

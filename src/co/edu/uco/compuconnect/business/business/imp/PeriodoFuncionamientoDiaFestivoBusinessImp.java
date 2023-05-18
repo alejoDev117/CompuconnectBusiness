@@ -2,13 +2,14 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.business.assembler.concrete.PeriodoFuncionamientoAssembler;
-import co.edu.uco.compuconnect.business.business.PeriodoFuncionamientoBusiness;
-import co.edu.uco.compuconnect.business.domain.PeriodoFuncionamientoDomain;
-import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
-import co.edu.uco.compuconnect.entities.PeriodoFuncionamientoEntity;
 
-public class PeriodoFuncionamientoDiaFestivoBusinessImp implements PeriodoFuncionamientoBusiness{
+import co.edu.uco.compuconnect.business.assembler.concrete.PeriodoFuncionamientoDiaFestivoAssembler;
+import co.edu.uco.compuconnect.business.business.PeriodoFuncionamientoDiaFestivoBusiness;
+import co.edu.uco.compuconnect.business.domain.PeriodoFuncionamientoDiaFestivoDomain;
+import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.PeriodoFuncionamientoDiaFestivoEntity;
+
+public class PeriodoFuncionamientoDiaFestivoBusinessImp implements PeriodoFuncionamientoDiaFestivoBusiness{
 	
 	private DAOFactory daoFactory;
 	
@@ -16,33 +17,26 @@ public class PeriodoFuncionamientoDiaFestivoBusinessImp implements PeriodoFuncio
 		this.daoFactory = daoFactory;
 	}
 
+
 	@Override
-	public void crear(PeriodoFuncionamientoDomain datosPeriodoFuncionamiento) {
-		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosPeriodoFuncionamiento);
-		daoFactory.getPeriodoFuncionamientoDAO().create(entity);
-		
+	public void crear(PeriodoFuncionamientoDiaFestivoDomain datosPeriodoFuncionamientoDiaFestivo) {
+		final PeriodoFuncionamientoDiaFestivoEntity entity = PeriodoFuncionamientoDiaFestivoAssembler.getInstance().toEntityFromDomain(datosPeriodoFuncionamientoDiaFestivo);
+		daoFactory.getPeriodoFuncionamientoDiaFestivoDAO().create(entity);
 	}
 
 	@Override
-	public void modificar(PeriodoFuncionamientoDomain datosModificacionPeriodoFuncionamiento) {
-		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosModificacionPeriodoFuncionamiento);
-		daoFactory.getPeriodoFuncionamientoDAO().update(entity);
+	public List<PeriodoFuncionamientoDiaFestivoDomain> consultar(
+			PeriodoFuncionamientoDiaFestivoDomain datosFiltroPeriodoFuncionamientoDiaFestivo) {
+		final PeriodoFuncionamientoDiaFestivoEntity entity = PeriodoFuncionamientoDiaFestivoAssembler.getInstance().toEntityFromDomain(datosFiltroPeriodoFuncionamientoDiaFestivo);
+		final List<PeriodoFuncionamientoDiaFestivoEntity> resultEntityList = daoFactory.getPeriodoFuncionamientoDiaFestivoDAO().read(entity);
 		
+		return PeriodoFuncionamientoDiaFestivoAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
-	public void eliminar(PeriodoFuncionamientoDomain datosEliminacionPeriodoFuncionamiento) {
-		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosEliminacionPeriodoFuncionamiento);
-		daoFactory.getPeriodoFuncionamientoDAO().delete(entity);
-		
-	}
-
-	@Override
-	public List<PeriodoFuncionamientoDomain> consultar(PeriodoFuncionamientoDomain datosFiltroPeriodoFuncionamiento) {
-		final PeriodoFuncionamientoEntity entity = PeriodoFuncionamientoAssembler.getInstance().toEntityFromDomain(datosFiltroPeriodoFuncionamiento);
-		final List<PeriodoFuncionamientoEntity> resultEntityList = daoFactory.getPeriodoFuncionamientoDAO().read(entity);
-		
-		return PeriodoFuncionamientoAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
+	public void eliminar(PeriodoFuncionamientoDiaFestivoDomain datosEliminacionPeriodoFuncionamientoDiaFestivo) {
+		final PeriodoFuncionamientoDiaFestivoEntity entity = PeriodoFuncionamientoDiaFestivoAssembler.getInstance().toEntityFromDomain(datosEliminacionPeriodoFuncionamientoDiaFestivo);
+		daoFactory.getPeriodoFuncionamientoDiaFestivoDAO().delete(entity);
 	}
 	
 	
