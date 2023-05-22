@@ -18,21 +18,21 @@ public class ReservaPerfilBusinessImp implements ReservaPerfilBusiness{
 
 	@Override
 	public void crear(ReservaPerfilDomain datosReservaPerfil) {
-		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosReservaPerfil);
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInstance().toEntityFromDomain(datosReservaPerfil);
 		daoFactory.getReservaPerfil().create(entity);
 		
 	}
 
 	@Override
 	public List<ReservaPerfilDomain> consultar(ReservaPerfilDomain datosFiltroReservaPerfil) {
-		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosFiltroReservaPerfil);
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInstance().toEntityFromDomain(datosFiltroReservaPerfil);
 		final List<ReservaPerfilEntity> resultEntityList = daoFactory.getReservaPerfilDAO().read(entity);
-		return ReservaPerfilAssembler.getInsta().toDomainListFromEntityList(resultEntityList);
+		return ReservaPerfilAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
 	@Override
 	public void eliminar(ReservaPerfilDomain datosEliminacionReservaPerfil) {
-		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInsta().toEntityFromDomain(datosEliminacionReservaPerfil);
+		final ReservaPerfilEntity entity = ReservaPerfilAssembler.getInstance().toEntityFromDomain(datosEliminacionReservaPerfil);
 		daoFactory.getReservaPerfilDAO().delete(entity);
 		
 	}
