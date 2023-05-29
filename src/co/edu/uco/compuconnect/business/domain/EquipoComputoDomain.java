@@ -34,8 +34,6 @@ public class EquipoComputoDomain {
 	
 	
 	
-	
-	
 	public static final EquipoComputoDomain getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}
