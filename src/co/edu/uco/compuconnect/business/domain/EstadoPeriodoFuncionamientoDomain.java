@@ -23,8 +23,8 @@ public class EstadoPeriodoFuncionamientoDomain {
 	private EstadoPeriodoFuncionamientoDomain() { 
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
-		setNombre(UtilText.getDefaultValue());
-		setDescripcion(UtilText.getDefaultValue());
+		setNombre(UtilText.getUtilText().getDefaultValue());
+		setDescripcion(UtilText.getUtilText().getDefaultValue());
 	}
 	
 	
@@ -47,7 +47,7 @@ public class EstadoPeriodoFuncionamientoDomain {
 	}
 	
 	private final void setNombre(final String nombre) {
-		this.nombre = UtilText.applyTrim(nombre) ;
+		this.nombre = UtilText.getUtilText().applyTrim(nombre) ;
 		
 	}
 	
@@ -56,7 +56,7 @@ public class EstadoPeriodoFuncionamientoDomain {
 	}
 	
 	private final void setDescripcion(final String descripcion) {
-		this.descripcion = UtilText.applyTrim(descripcion);
+		this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
 		
 	}
 	

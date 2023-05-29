@@ -114,7 +114,7 @@ public class ExcepcionDomain {
 	}
 	
 	private final void setMotivo(final String motivo) {
-		this.motivo = UtilText.applyTrim(motivo);
+		this.motivo = UtilText.getUtilText().applyTrim(motivo);
 	
 	}
 	

@@ -34,7 +34,7 @@ public class PeriodoFuncionamientoDomain {
 	private PeriodoFuncionamientoDomain() {
 		super();	
 		setIdentificador(UtilUUID.getDefaultUuid());
-		setNombre(UtilText.getDefaultValue());
+		setNombre(UtilText.getUtilText().getDefaultValue());
 		setFechaInicio(UtilDateTime.getDefaultValueDate());
 		setFechaFin(UtilDateTime.getDefaultValueDate());
 		setDiaFestivo(DiaFestivoDomain.getDefaultObject());
@@ -67,7 +67,7 @@ public class PeriodoFuncionamientoDomain {
 	}
 	
 	private final void setNombre(final String nombre) {
-		this.nombre = UtilText.applyTrim(nombre);
+		this.nombre = UtilText.getUtilText().applyTrim(nombre);
 		
 	}
 	

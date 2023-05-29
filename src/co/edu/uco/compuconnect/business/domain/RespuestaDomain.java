@@ -28,7 +28,7 @@ public class RespuestaDomain {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setAutor(CoordinadorDomain.getDefaultObject());
-		setObservacion(UtilText.getDefaultValue());
+		setObservacion(UtilText.getUtilText().getDefaultValue());
 		setFecha(UtilDateTime.getDefaultValueDate());
 	}
 	
@@ -57,7 +57,7 @@ public class RespuestaDomain {
 	}
 	
 	private final void setObservacion(String observacion) {
-		this.observacion = UtilText.applyTrim(observacion);
+		this.observacion = UtilText.getUtilText().applyTrim(observacion);
 	}
 	
 	public final Date getFecha() {

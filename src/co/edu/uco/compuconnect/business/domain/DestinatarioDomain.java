@@ -22,7 +22,7 @@ public final class DestinatarioDomain {
 
     private DestinatarioDomain() {
         setIdentificador(UtilUUID.getDefaultUuid());
-        setNombre(UtilText.getDefaultValue());
+        setNombre(UtilText.getUtilText().getDefaultValue());
         setCorreo(UtilMail.getDefaultValueMail());
     }
 
@@ -43,7 +43,7 @@ public final class DestinatarioDomain {
     }
 
     private final void setNombre(String nombre) {
-        this.nombre = UtilText.applyTrim(nombre);
+        this.nombre = UtilText.getUtilText().applyTrim(nombre);
     }
 
     public String getCorreo() {
@@ -51,6 +51,6 @@ public final class DestinatarioDomain {
     }
 
     private final void setCorreo(String correo) {
-        this.correo = UtilText.applyTrim(correo);
+        this.correo = UtilText.getUtilText().applyTrim(correo);
     }
 }

@@ -46,7 +46,7 @@ public final class ReservaDomain{
 		setFechaFin(UtilDateTime.getDefaultValueDate());
 		setFrecuencia(FrecuenciaDomain.getDefaultObject());
 		setCentroInformatica(CentroInformaticaDomain.getDefaultObject());
-		setDescripcion(UtilText.getDefaultValue());
+		setDescripcion(UtilText.getUtilText().getDefaultValue());
 		setHoraCreacion(UtilDateTime.getDefaultValueDate());
 	}
 	
@@ -86,7 +86,7 @@ public final class ReservaDomain{
 
 	
 	private final void  setDescripcion(String descripcion) {
-		this.descripcion = UtilText.applyTrim(descripcion);
+		this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
 		
 	}
 

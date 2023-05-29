@@ -25,8 +25,8 @@ public final class SoftwareDomain {
 	private SoftwareDomain() {
 		super();	
 		setIdentificador(UtilUUID.getDefaultUuid());
-		setNombre(UtilText.getDefaultValue());
-		setVersion(UtilText.getDefaultValue());
+		setNombre(UtilText.getUtilText().getDefaultValue());
+		setVersion(UtilText.getUtilText().getDefaultValue());
 		}
 	
 	public static final SoftwareDomain getDefaultObject() {
@@ -57,7 +57,7 @@ public final class SoftwareDomain {
 	
 
 	private final void setNombre(final String nombre) {
-		this.nombre = UtilText.applyTrim(nombre);
+		this.nombre = UtilText.getUtilText().applyTrim(nombre);
 		
 	}
 
@@ -70,7 +70,7 @@ public final class SoftwareDomain {
 
 	
 	private final void setVersion(final String version) {
-		this.version = UtilText.applyTrim(version);
+		this.version = UtilText.getUtilText().applyTrim(version);
 	
 	}
 	

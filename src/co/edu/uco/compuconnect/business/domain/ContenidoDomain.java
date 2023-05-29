@@ -18,7 +18,7 @@ public final class ContenidoDomain {
 
     private ContenidoDomain() {
         setIdentificador(UtilUUID.getDefaultUuid());
-        setDescripcion(UtilText.getDefaultValue());
+        setDescripcion(UtilText.getUtilText().getDefaultValue());
     }
 
     public static ContenidoDomain getDefaultObject() {
@@ -38,7 +38,7 @@ public final class ContenidoDomain {
     }
 
     private final void setDescripcion(String descripcion) {
-        this.descripcion = UtilText.applyTrim(descripcion);
+        this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
     }
 }
 

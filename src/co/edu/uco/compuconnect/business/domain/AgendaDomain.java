@@ -34,7 +34,7 @@ public class AgendaDomain {
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setPeriodoFuncionamiento(PeriodoFuncionamientoDomain.getDefaultObject());
 		setCentroInformatica(CentroInformaticaDomain.getDefaultObject());
-		setNombre(UtilText.getDefaultValue());
+		setNombre(UtilText.getUtilText().getDefaultValue());
 		
 		
 	}
@@ -81,7 +81,7 @@ public class AgendaDomain {
 		return nombre;
 	}
 	private final void setNombre(final String nombre) {
-		this.nombre = UtilText.applyTrim(nombre) ;
+		this.nombre = UtilText.getUtilText().applyTrim(nombre) ;
 		
 	}
 

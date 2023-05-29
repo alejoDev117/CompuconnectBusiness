@@ -34,7 +34,7 @@ public final class SolicitudDomain{
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setAutor(UsuarioDomain.getDeafaulObject());
 		setTipoSolicitud(TipoSolicitudDomain.getDefaultObject());
-		setDescripcion(UtilText.getDefaultValue());
+		setDescripcion(UtilText.getUtilText().getDefaultValue());
 		setHoraCreacion(UtilDateTime.getDefaultValueDate());
 		setEstadoSolicitud(EstadoSolicitudDomain.getDefaultObject());
 		
@@ -76,7 +76,7 @@ public final class SolicitudDomain{
 
 	
 	private final void  setDescripcion(String descripcion) {
-		this.descripcion = UtilText.applyTrim(descripcion);
+		this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
 		
 	}
 

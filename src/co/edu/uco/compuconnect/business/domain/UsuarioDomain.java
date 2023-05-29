@@ -32,10 +32,11 @@ public class UsuarioDomain {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
 		setTipoUsuario(TipoUsuarioDomain.getDefaultObject());
-		setNombre(UtilText.getDefaultValue());
+		setNombre(UtilText.getUtilText().getDefaultValue());
 		setTipoIdentificacion(TipoIdentificacionDomain.getDefaultObject());
-		setIdentificacion(UtilText.getDefaultValue());
+		setIdentificacion(UtilText.getUtilText().getDefaultValue());
 		setCorreoInstitucional(UtilMail.getDefaultValueMail());
+		setNombre(UtilText.getUtilText().getDefaultValue());
 		
 	}
 	
@@ -80,7 +81,7 @@ public class UsuarioDomain {
 
 
 	private void setCorreoInstitucional(String correoInstitucional) {
-		this.correoInstitucional = UtilText.applyTrim(correoInstitucional);
+		this.correoInstitucional = UtilText.getUtilText().applyTrim(correoInstitucional);
 		
 	}
 
@@ -92,7 +93,7 @@ public class UsuarioDomain {
 
 	
 	private void setIdentificacion(String identificacion) {
-		this.identificacion = UtilText.applyTrim(identificacion);
+		this.identificacion = UtilText.getUtilText().applyTrim(identificacion);
 		
 	}
 
@@ -114,7 +115,7 @@ public class UsuarioDomain {
 
 	
 	private final void   setNombre(String nombre) {
-		this.nombre = UtilText.applyTrim(nombre);
+		this.nombre = UtilText.getUtilText().applyTrim(nombre);
 	
 	}
 

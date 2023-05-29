@@ -24,9 +24,9 @@ public final class PersonaEncargadaDomain {
 
     private PersonaEncargadaDomain() {
         setIdentificador(UtilUUID.getDefaultUuid());
-        setNombre(UtilText.getDefaultValue());
+        setNombre(UtilText.getUtilText().getDefaultValue());
         setCorreoInstitucional(UtilMail.getDefaultValueMail());
-        setNumeroCelular(UtilText.getDefaultValue());
+        setNumeroCelular(UtilText.getUtilText().getDefaultValue());
     }
 
     public static PersonaEncargadaDomain getDefaultObject() {
@@ -46,7 +46,7 @@ public final class PersonaEncargadaDomain {
     }
 
     private final void setNombre(String nombre) {
-        this.nombre = UtilText.applyTrim(nombre);
+        this.nombre = UtilText.getUtilText().applyTrim(nombre);
     }
 
     public String getCorreoInstitucional() {
@@ -54,7 +54,7 @@ public final class PersonaEncargadaDomain {
     }
 
     private final void setCorreoInstitucional(String correoInstitucional) {
-        this.correoInstitucional = UtilText.applyTrim(correoInstitucional);
+        this.correoInstitucional = UtilText.getUtilText().applyTrim(correoInstitucional);
     }
 
     public String getNumeroCelular() {
@@ -62,6 +62,6 @@ public final class PersonaEncargadaDomain {
     }
 
     private final void setNumeroCelular(String numeroCelular) {
-        this.numeroCelular = UtilText.applyTrim(numeroCelular);
+        this.numeroCelular = UtilText.getUtilText().applyTrim(numeroCelular);
     }
 }
