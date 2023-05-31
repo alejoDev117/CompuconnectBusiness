@@ -62,7 +62,7 @@ public final class CentroInformaticaFacadeImp implements CentroInformaticaFacade
 		}catch(final CompuconnectException exception) {
 			throw exception;
 		}catch(final Exception exception) {
-			throw CompuconnectBusinessException.create(CentroInformaticaFacadeImpMessage.READ_EXCEPTION_TECHNICAL_MESSAGE, CentroInformaticaFacadeImpMessage.CREATE_EXCEPTION_USER_MESSAGE, exception);
+			throw CompuconnectBusinessException.create(CentroInformaticaFacadeImpMessage.READ_EXCEPTION_TECHNICAL_MESSAGE, CentroInformaticaFacadeImpMessage.READ_EXCEPTION_USER_MESSAGE, exception);
 		}finally {
 			daoFactory.cerrarConexion();
 		}
