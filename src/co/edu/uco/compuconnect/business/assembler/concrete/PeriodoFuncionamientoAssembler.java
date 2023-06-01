@@ -47,7 +47,8 @@ public final class PeriodoFuncionamientoAssembler implements Assembler<PeriodoFu
 	@Override
 	public PeriodoFuncionamientoDomain toDomainFromEntity(PeriodoFuncionamientoEntity entity) {
 		return new PeriodoFuncionamientoDomain(entity.getIdentificador(),entity.getNombre(),entity.getFechaInicio(),entity.getFechaFin(),
-				DiaFestivoAssembler.getInstance().toDomainFromEntity(entity.getDiaFestivo()),EstadoPeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getEstado()));
+				DiaFestivoAssembler.getInstance().toDomainFromEntity(entity.getDiaFestivo()),
+				EstadoPeriodoFuncionamientoAssembler.getInstance().toDomainFromEntity(entity.getEstado()));
 	}
 
 
