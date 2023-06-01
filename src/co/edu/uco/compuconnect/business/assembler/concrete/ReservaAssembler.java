@@ -25,38 +25,44 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 	@Override
 	public ReservaDTO toDTOFromDomain(ReservaDomain domain) {
 		return ReservaDTO.create().setIdentificador(domain.getIdentificador()).
+				setAgenda(AgendaAssembler.getInstance().toDTOFromDomain(domain.getAgenda())).
 				setAutor(UsuarioAssembler.getInstance().toDTOFromDomain(domain.getAutor())).
 				setTipoReserva(TipoReservaAssembler.getInstance().toDTOFromDomain(domain.getTipoReserva())).
 				setFechaInicio(domain.getFechaInicio()).setFechaFin(domain.getFechaFin()).
 				setFrecuencia(FrecuenciaAssembler.getInstance().toDTOFromDomain(domain.getFrecuencia())).
-				setCentroInformatica(CentroInformaticaAssembler.getInstance().toDTOFromDomain(domain.getCentroInformatica())).
 				setDescripcion(domain.getDescripcion()).setHoraCreacion(domain.getHoraCreacion());
 	}
 
 
 	@Override
 	public ReservaDomain toDomainFromDto(ReservaDTO dto) {
-		return new ReservaDomain(dto.getIdentificador(),UsuarioAssembler.getInstance().toDomainFromDto(dto.getAutor()),
+		return new ReservaDomain(dto.getIdentificador(),
+				AgendaAssembler.getInstance().toDomainFromDto(dto.getAgenda()),
+				UsuarioAssembler.getInstance().toDomainFromDto(dto.getAutor()),
 				TipoReservaAssembler.getInstance().toDomainFromDto(dto.getTipoReserva()),dto.getFechaInicio(),dto.getFechaFin(),
-				FrecuenciaAssembler.getInstance().toDomainFromDto(dto.getFrecuencia()),CentroInformaticaAssembler.getInstance().toDomainFromDto(dto.getCentroInformatica()),
+				FrecuenciaAssembler.getInstance().toDomainFromDto(dto.getFrecuencia()),
 				dto.getDescripcion(),dto.getHoraCreacion());
 	}
 
 
 	@Override
 	public ReservaEntity toEntityFromDomain(ReservaDomain domain) {
-		return new ReservaEntity(domain.getIdentificador(),UsuarioAssembler.getInstance().toEntityFromDomain(domain.getAutor()),
+		return new ReservaEntity(domain.getIdentificador(),
+				AgendaAssembler.getInstance().toEntityFromDomain(domain.getAgenda()),
+				UsuarioAssembler.getInstance().toEntityFromDomain(domain.getAutor()),
 				TipoReservaAssembler.getInstance().toEntityFromDomain(domain.getTipoReserva()),domain.getFechaInicio(),domain.getFechaFin(),
-				FrecuenciaAssembler.getInstance().toEntityFromDomain(domain.getFrecuencia()),CentroInformaticaAssembler.getInstance().toEntityFromDomain(domain.getCentroInformatica()),
+				FrecuenciaAssembler.getInstance().toEntityFromDomain(domain.getFrecuencia()),
 				domain.getDescripcion(),domain.getHoraCreacion());
 	}
 
 
 	@Override
 	public ReservaDomain toDomainFromEntity(ReservaEntity entity) {
-		return new ReservaDomain(entity.getIdentificador(),UsuarioAssembler.getInstance().toDomainFromEntity(entity.getAutor()),
+		return new ReservaDomain(entity.getIdentificador(),
+				AgendaAssembler.getInstance().toDomainFromEntity(entity.getAgenda()),
+				UsuarioAssembler.getInstance().toDomainFromEntity(entity.getAutor()),
 				TipoReservaAssembler.getInstance().toDomainFromEntity(entity.getTipoReserva()),entity.getFechaInicio(),entity.getFechaFin(),
-				FrecuenciaAssembler.getInstance().toDomainFromEntity(entity.getFrecuencia()),CentroInformaticaAssembler.getInstance().toDomainFromEntity(entity.getCentroInformatica()),
+				FrecuenciaAssembler.getInstance().toDomainFromEntity(entity.getFrecuencia()),
 				entity.getDescripcion(),entity.getHoraCreacion());
 	}
 

@@ -2,14 +2,13 @@ package co.edu.uco.compuconnect.business.facade.imp;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.business.assembler.concrete.CentroInformaticaAssembler;
+
 import co.edu.uco.compuconnect.business.assembler.concrete.FrecuenciaAssembler;
 import co.edu.uco.compuconnect.business.business.FrecuenciaBusiness;
 import co.edu.uco.compuconnect.business.business.imp.FrecuenciaBusinessImp;
 import co.edu.uco.compuconnect.business.facade.FrecuenciaFacade;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectBusinessException;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectException;
-import co.edu.uco.compuconnect.crosscutting.utils.Messages.CentroInformaticaFacadeImpMessage;
 import co.edu.uco.compuconnect.crosscutting.utils.Messages.FrecuenciaFacadeImpMessage;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 import co.edu.uco.compuconnect.data.dao.factory.Factory;

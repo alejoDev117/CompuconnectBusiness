@@ -15,37 +15,37 @@ public final class ReservaDomain{
 	
 	private static final ReservaDomain DEFAULT_OBJECT = new ReservaDomain();
 	private UUID identificador;
+	private AgendaDomain agenda;
 	private UsuarioDomain autor;
 	private TipoReservaDomain tipoReserva;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private FrecuenciaDomain frecuencia;
-	private CentroInformaticaDomain centroInformatica;
 	private String descripcion;
 	private Date horaCreacion;
 	
 
-	public ReservaDomain(UUID identificador, UsuarioDomain autor, TipoReservaDomain tipoReserva, Date FechaInicio, Date FechaFin,FrecuenciaDomain frecuencia, CentroInformaticaDomain centroInformatica,String descripcion, Date horaCreacion) {
+	public ReservaDomain(UUID identificador, AgendaDomain agenda ,UsuarioDomain autor, TipoReservaDomain tipoReserva, Date FechaInicio, Date FechaFin,FrecuenciaDomain frecuencia,String descripcion, Date horaCreacion) {
 		setIdentificador(identificador);
+		setAgenda(agenda);
 		setAutor(autor);
 		setTipoReserva(tipoReserva);
 		setFechaInicio(FechaInicio);
 		setFechaFin(FechaFin);
 		setFrecuencia(frecuencia);
-		setCentroInformatica(centroInformatica);
 		setDescripcion(descripcion);
 		setHoraCreacion(horaCreacion);
 	}
 	
-	public ReservaDomain() {
+	private ReservaDomain() {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
+		setAgenda(AgendaDomain.getDefaultObject());
 		setAutor(UsuarioDomain.getDeafaulObject());
 		setTipoReserva(TipoReservaDomain.getDefaultObject());
 		setFechaInicio(UtilDateTime.getDefaultValueDate());
 		setFechaFin(UtilDateTime.getDefaultValueDate());
 		setFrecuencia(FrecuenciaDomain.getDefaultObject());
-		setCentroInformatica(CentroInformaticaDomain.getDefaultObject());
 		setDescripcion(UtilText.getUtilText().getDefaultValue());
 		setHoraCreacion(UtilDateTime.getDefaultValueDate());
 	}
@@ -137,16 +137,18 @@ public final class ReservaDomain{
 	private final void setFrecuencia(FrecuenciaDomain frecuencia) {
 		this.frecuencia = UtilObject.getDefault(frecuencia, FrecuenciaDomain.getDefaultObject());
 	
-	}
-
-	public final CentroInformaticaDomain getCentroInformatica() {
-		return centroInformatica;
-	}
-
-	private final void setCentroInformatica(CentroInformaticaDomain centroInformatica) {
-		this.centroInformatica = UtilObject.getDefault(centroInformatica, CentroInformaticaDomain.getDefaultObject());
 		
 	}
+
+	public final AgendaDomain getAgenda() {
+		return agenda;
+	}
+
+	public final void setAgenda(AgendaDomain agenda) {
+		this.agenda = UtilObject.getDefault(agenda, AgendaDomain.getDefaultObject());
+	}
+
+
 	
 	
 

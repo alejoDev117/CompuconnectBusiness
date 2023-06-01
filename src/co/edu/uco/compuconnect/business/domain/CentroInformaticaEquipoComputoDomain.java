@@ -2,8 +2,8 @@ package co.edu.uco.compuconnect.business.domain;
 
 import java.util.UUID;
 
+
 import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
-import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 
 public class CentroInformaticaEquipoComputoDomain {

@@ -2,10 +2,11 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.assembler.concrete.CentroInformaticaEquipoComputoAssembler;
-import co.edu.uco.compuconnect.business.business.CentroInformaticaBusiness;
+
 import co.edu.uco.compuconnect.business.business.CentroInformaticaEquipoComputoBusiness;
-import co.edu.uco.compuconnect.business.domain.CentroInformaticaDomain;
+
 import co.edu.uco.compuconnect.business.domain.CentroInformaticaEquipoComputoDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 import co.edu.uco.compuconnect.entities.CentroInformaticaEquipoComputoEntity;

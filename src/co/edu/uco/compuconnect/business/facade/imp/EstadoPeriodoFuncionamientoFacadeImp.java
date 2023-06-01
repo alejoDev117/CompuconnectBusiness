@@ -2,14 +2,12 @@ package co.edu.uco.compuconnect.business.facade.imp;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.business.assembler.concrete.CentroInformaticaAssembler;
 import co.edu.uco.compuconnect.business.assembler.concrete.EstadoPeriodoFuncionamientoAssembler;
 import co.edu.uco.compuconnect.business.business.EstadoPeriodoFuncionamientoBusiness;
 import co.edu.uco.compuconnect.business.business.imp.EstadoPeriodoFuncionamientoBusinessImp;
 import co.edu.uco.compuconnect.business.facade.EstadoPeriodoFuncionamientoFacade;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectBusinessException;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectException;
-import co.edu.uco.compuconnect.crosscutting.utils.Messages.CentroInformaticaFacadeImpMessage;
 import co.edu.uco.compuconnect.crosscutting.utils.Messages.EstadoPeriodoFuncionamientoFacadeImpMessage;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 import co.edu.uco.compuconnect.data.dao.factory.Factory;

@@ -2,11 +2,12 @@ package co.edu.uco.compuconnect.business.domain;
 
 import java.util.UUID;
 
+
 import co.edu.uco.compuconnect.crosscutting.utils.UtilMail;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilObject;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
-import co.edu.uco.compuconnect.dto.UsuarioDTO;
+
 
 public final class MonitorDomain extends UsuarioDomain {
 	

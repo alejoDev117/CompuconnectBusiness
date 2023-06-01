@@ -2,8 +2,8 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.assembler.concrete.SolicitudPerfilAssembler;
-import co.edu.uco.compuconnect.business.business.SolicitudBusiness;
 import co.edu.uco.compuconnect.business.business.SolicitudPerfilBusiness;
 import co.edu.uco.compuconnect.business.domain.SolicitudPerfilDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;

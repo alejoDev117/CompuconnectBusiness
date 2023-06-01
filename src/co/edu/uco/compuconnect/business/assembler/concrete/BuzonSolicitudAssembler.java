@@ -2,9 +2,9 @@ package co.edu.uco.compuconnect.business.assembler.concrete;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.BuzonSolicitudDomain;
-import co.edu.uco.compuconnect.business.domain.RespuestaDomain;
 import co.edu.uco.compuconnect.dto.BuzonSolicitudDTO;
 import co.edu.uco.compuconnect.entities.BuzonSolicitudEntity;
 

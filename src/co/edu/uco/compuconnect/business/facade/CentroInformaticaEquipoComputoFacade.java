@@ -2,7 +2,7 @@ package co.edu.uco.compuconnect.business.facade;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.business.domain.CentroInformaticaEquipoComputoDomain;
+
 import co.edu.uco.compuconnect.dto.CentroInformaticaEquipoComputoDTO;
 
 public interface CentroInformaticaEquipoComputoFacade {

@@ -2,8 +2,9 @@ package co.edu.uco.compuconnect.business.business;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.domain.DestinatarioNotificacionDomain;
-import co.edu.uco.compuconnect.business.domain.DetalleReservaDomain;
+
 
 public interface  DestinatarioNotificacionBusiness {
 	

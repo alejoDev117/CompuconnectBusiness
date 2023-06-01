@@ -2,9 +2,9 @@ package co.edu.uco.compuconnect.business.assembler.concrete;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.CoordinadorDomain;
-import co.edu.uco.compuconnect.business.domain.TipoUsuarioDomain;
 import co.edu.uco.compuconnect.dto.CoordinadorDTO;
 import co.edu.uco.compuconnect.entities.CoordinadorEntity;
 

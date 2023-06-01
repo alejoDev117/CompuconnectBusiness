@@ -2,12 +2,12 @@ package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
 
-import co.edu.uco.compuconnect.business.assembler.concrete.EstadoPeriodoFuncionamientoAssembler;
+
 import co.edu.uco.compuconnect.business.assembler.concrete.EstadoSolicitudAssembler;
 import co.edu.uco.compuconnect.business.business.EstadoSolicitudBusiness;
 import co.edu.uco.compuconnect.business.domain.EstadoSolicitudDomain;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
-import co.edu.uco.compuconnect.entities.EstadoPeriodoFuncionamientoEntity;
+
 import co.edu.uco.compuconnect.entities.EstadoSolicitudEntity;
 
 public final class EstadoSolicitudBusinessImp implements EstadoSolicitudBusiness{
