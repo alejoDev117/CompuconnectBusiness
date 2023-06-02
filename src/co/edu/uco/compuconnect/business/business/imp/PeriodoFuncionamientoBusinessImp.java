@@ -1,18 +1,17 @@
 package co.edu.uco.compuconnect.business.business.imp;
 
 import java.util.List;
+
 import java.util.UUID;
 
 import co.edu.uco.compuconnect.business.assembler.concrete.PeriodoFuncionamientoAssembler;
 import co.edu.uco.compuconnect.business.business.PeriodoFuncionamientoBusiness;
 import co.edu.uco.compuconnect.business.domain.PeriodoFuncionamientoDomain;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectBusinessException;
-import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectDataException;
 import co.edu.uco.compuconnect.crosscutting.utils.Messages.PeriodoFuncionamientoBusinessImpMessage;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilDateTime;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
-import co.edu.uco.compuconnect.entities.EstadoPeriodoFuncionamientoEntity;
 import co.edu.uco.compuconnect.entities.PeriodoFuncionamientoEntity;
 
 

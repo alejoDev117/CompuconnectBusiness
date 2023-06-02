@@ -8,7 +8,6 @@ import co.edu.uco.compuconnect.business.business.AgendaBusiness;
 import co.edu.uco.compuconnect.business.domain.AgendaDomain;
 import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectBusinessException;
 import co.edu.uco.compuconnect.crosscutting.utils.Messages.AgendaBusinessImpMessage;
-import co.edu.uco.compuconnect.crosscutting.utils.Messages.AgendaFacadeImpMessage;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
 import co.edu.uco.compuconnect.entities.AgendaEntity;
