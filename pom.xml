@@ -5,10 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>CompuconnectBusiness</name>
   <description>Componente encargado de gestionar las clases que contienen la logica del negocio.</description>
-	<properties>
-  <sonar.organization>alejodev117</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	</properties>
+  <properties>
+        <sonar.organization>alejodev117</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  </properties>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
