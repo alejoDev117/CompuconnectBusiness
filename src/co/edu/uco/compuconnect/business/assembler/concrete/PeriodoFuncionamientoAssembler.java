@@ -63,5 +63,4 @@ public final class PeriodoFuncionamientoAssembler implements Assembler<PeriodoFu
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 	
-	
 }

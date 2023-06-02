@@ -60,7 +60,7 @@ public class AgendaDomain {
 		return periodoFuncionamiento;
 	}
 	
-	private final void setPeriodoFuncionamiento(final PeriodoFuncionamientoDomain centroInformatica) {
+	private final void setPeriodoFuncionamiento(final PeriodoFuncionamientoDomain periodoFuncionamiento) {
 		this.periodoFuncionamiento = UtilObject.getDefault(periodoFuncionamiento, PeriodoFuncionamientoDomain.getDefaultObject());
 		
 	}
