@@ -9,6 +9,18 @@
         <sonar.organization>alejodev117</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
+  <repositories>
+  <repository>
+    <id>crosscutting</id>
+    <url>https://github.com/alejoDev117/CompuconnectCrossCutting/</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
