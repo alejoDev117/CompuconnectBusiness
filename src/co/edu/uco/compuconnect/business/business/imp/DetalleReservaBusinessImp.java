@@ -41,8 +41,7 @@ public final class DetalleReservaBusinessImp implements DetalleReservaBusiness{
 			throw CompuconnectBusinessException.create(DetalleReservaBusinessImpMessage.BUSINESS_RULE_DETALLE_RESERVA_TIME_OUT_OF_RANGE);
 		}
 		
-		final var domainToCreate = new DetalleReservaDomain(identificador,
-				datosDetalleReserva.getReserva(), 
+		final var domainToCreate = new DetalleReservaDomain(identificador, 
 				datosDetalleReserva.getDia(), 
 				datosDetalleReserva.getHorainicio(), 
 				datosDetalleReserva.getHorafin());

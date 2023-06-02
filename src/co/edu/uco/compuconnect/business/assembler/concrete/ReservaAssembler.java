@@ -30,7 +30,8 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 				setTipoReserva(TipoReservaAssembler.getInstance().toDTOFromDomain(domain.getTipoReserva())).
 				setFechaInicio(domain.getFechaInicio()).setFechaFin(domain.getFechaFin()).
 				setFrecuencia(FrecuenciaAssembler.getInstance().toDTOFromDomain(domain.getFrecuencia())).
-				setDescripcion(domain.getDescripcion()).setHoraCreacion(domain.getHoraCreacion());
+				setDescripcion(domain.getDescripcion()).setHoraCreacion(domain.getHoraCreacion()).
+				setDetalle(DetalleReservaAssembler.getInstance().toDTOFromDomain(domain.getDetalle()));
 	}
 
 
@@ -41,7 +42,8 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 				UsuarioAssembler.getInstance().toDomainFromDto(dto.getAutor()),
 				TipoReservaAssembler.getInstance().toDomainFromDto(dto.getTipoReserva()),dto.getFechaInicio(),dto.getFechaFin(),
 				FrecuenciaAssembler.getInstance().toDomainFromDto(dto.getFrecuencia()),
-				dto.getDescripcion(),dto.getHoraCreacion());
+				dto.getDescripcion(),dto.getHoraCreacion(),
+				DetalleReservaAssembler.getInstance().toDomainFromDto(dto.getDetalle()));
 	}
 
 
@@ -52,7 +54,8 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 				UsuarioAssembler.getInstance().toEntityFromDomain(domain.getAutor()),
 				TipoReservaAssembler.getInstance().toEntityFromDomain(domain.getTipoReserva()),domain.getFechaInicio(),domain.getFechaFin(),
 				FrecuenciaAssembler.getInstance().toEntityFromDomain(domain.getFrecuencia()),
-				domain.getDescripcion(),domain.getHoraCreacion());
+				domain.getDescripcion(),domain.getHoraCreacion(),
+				DetalleReservaAssembler.getInstance().toEntityFromDomain(domain.getDetalle()));
 	}
 
 
@@ -63,7 +66,8 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 				UsuarioAssembler.getInstance().toDomainFromEntity(entity.getAutor()),
 				TipoReservaAssembler.getInstance().toDomainFromEntity(entity.getTipoReserva()),entity.getFechaInicio(),entity.getFechaFin(),
 				FrecuenciaAssembler.getInstance().toDomainFromEntity(entity.getFrecuencia()),
-				entity.getDescripcion(),entity.getHoraCreacion());
+				entity.getDescripcion(),entity.getHoraCreacion(),
+				DetalleReservaAssembler.getInstance().toDomainFromEntity(entity.getDetalle()));
 	}
 
 

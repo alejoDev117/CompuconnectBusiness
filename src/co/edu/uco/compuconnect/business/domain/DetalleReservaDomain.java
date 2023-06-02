@@ -11,17 +11,15 @@ public class DetalleReservaDomain {
 	
 	private static final DetalleReservaDomain DEFAULT_OBJECT = new DetalleReservaDomain();
 	private UUID identificador;
-	private ReservaDomain reserva;
 	private DiaSemanalDomain dia;
 	private LocalTime horainicio;
 	private LocalTime horafin;
 	
 	
-	public DetalleReservaDomain(UUID identificador, ReservaDomain reserva, DiaSemanalDomain dia, LocalTime horainicio,
+	public DetalleReservaDomain(UUID identificador, DiaSemanalDomain dia, LocalTime horainicio,
 			LocalTime horafin) {
 		super();
 		setIdentificador(identificador);
-		setReserva(reserva);
 		setDia(dia);
 		setHorainicio(horainicio);
 		setHorafin(horafin);
@@ -30,7 +28,6 @@ public class DetalleReservaDomain {
 	private DetalleReservaDomain() {
 		super();
 		setIdentificador(UtilUUID.getDefaultUuid());
-		setReserva(ReservaDomain.getDefaultObject());
 		setDia(DiaSemanalDomain.getDefaultObject());
 		setHorainicio(UtilDateTime.getDefaultValueLocaltime());
 		setHorafin(UtilDateTime.getDefaultValueLocaltime());
@@ -46,14 +43,6 @@ public class DetalleReservaDomain {
 
 	private final void setIdentificador(final UUID identificador) {
 		this.identificador = UtilUUID.getDefault(identificador);
-	}
-
-	public final ReservaDomain getReserva() {
-		return reserva;
-	}
-
-	private final void setReserva(ReservaDomain reserva) {
-		this.reserva = UtilObject.getDefault(reserva, ReservaDomain.getDefaultObject());
 	}
 
 	public final DiaSemanalDomain getDia() {
