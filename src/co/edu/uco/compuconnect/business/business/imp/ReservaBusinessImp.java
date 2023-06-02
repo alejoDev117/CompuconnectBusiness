@@ -39,20 +39,19 @@ public final class ReservaBusinessImp implements ReservaBusiness{
 		if(UtilDateTime.dateIsAfter(datosReserva.getFechaInicio(), datosReserva.getFechaFin())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_DATE_RANGE_INVALID);
 		}
+
 		
-		if(UtilDateTime.dateIsBefore(datosReserva.getFechaInicio(), datosReserva.getAgenda().getPeriodoFuncionamiento().getFechaInicio()) || 
+	   if(UtilDateTime.dateIsBefore(datosReserva.getFechaInicio(), datosReserva.getAgenda().getPeriodoFuncionamiento().getFechaInicio()) || 
 				UtilDateTime.dateIsAfter(datosReserva.getFechaFin(), datosReserva.getAgenda().getPeriodoFuncionamiento().getFechaFin())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_DATE_AGENDA_DATE_RANGE);
 		}
-		
-		if(UtilUUID.isDefault(datosReserva.getTipoReserva().getIdentificador()) && UtilText.getUtilText().isEmpty(datosReserva.getTipoReserva().getNombre())) {
+	
+		if(UtilUUID.isDefault(datosReserva.getTipoReserva().getIdentificador()) && !UtilText.getUtilText().isEmpty(datosReserva.getTipoReserva().getNombre())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_TIPO_RESERVA_INVALID);			
 		}
-		if(UtilUUID.isDefault(datosReserva.getFrecuencia().getIdentificador()) && UtilText.getUtilText().isEmpty(datosReserva.getFrecuencia().getNombre())) {
+		if(UtilUUID.isDefault(datosReserva.getFrecuencia().getIdentificador()) && !UtilText.getUtilText().isEmpty(datosReserva.getFrecuencia().getNombre())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_FRECUENCIA_INVALID);			
 		}
-		
-		
 		
 		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosReserva);
 		daoFactory.getReservaDAO().create(entity);

@@ -50,11 +50,11 @@ public final class ReservaAssembler implements Assembler<ReservaDomain,ReservaDT
 	@Override
 	public ReservaEntity toEntityFromDomain(ReservaDomain domain) {
 		return new ReservaEntity(domain.getIdentificador(),
-				AgendaAssembler.getInstance().toEntityFromDomain(domain.getAgenda()),
 				UsuarioAssembler.getInstance().toEntityFromDomain(domain.getAutor()),
 				TipoReservaAssembler.getInstance().toEntityFromDomain(domain.getTipoReserva()),domain.getFechaInicio(),domain.getFechaFin(),
 				FrecuenciaAssembler.getInstance().toEntityFromDomain(domain.getFrecuencia()),
 				domain.getDescripcion(),domain.getHoraCreacion(),
+				AgendaAssembler.getInstance().toEntityFromDomain(domain.getAgenda()),
 				DetalleReservaAssembler.getInstance().toEntityFromDomain(domain.getDetalle()));
 	}
 
