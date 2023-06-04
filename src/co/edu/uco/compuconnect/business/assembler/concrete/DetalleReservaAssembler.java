@@ -25,28 +25,30 @@ public final class DetalleReservaAssembler implements Assembler< DetalleReservaD
 	@Override
 	public DetalleReservaDTO toDTOFromDomain(DetalleReservaDomain domain) {
 		return DetalleReservaDTO.create().setIdentificador(domain.getIdentificador()).
+				setReserva(ReservaAssembler.getInstance().toDTOFromDomain(domain.getReserva())).
 				setDia(DiaSemanalAssembler.getInstance().toDTOFromDomain(domain.getDia())).
-				setHoraInicio(domain.getHorainicio()).setHorFin(domain.getHorafin());
+				setHoraInicio(domain.getHorainicio()).setHoraFin(domain.getHorafin());
 	}
 
 
 	@Override
 	public DetalleReservaDomain toDomainFromDto(DetalleReservaDTO dto) {
-		return new DetalleReservaDomain(dto.getIdentificador(),
-				DiaSemanalAssembler.getInstance().toDomainFromDto(dto.getDia()),dto.getHoraInicio(),dto.getHorFin());
+		return new DetalleReservaDomain(dto.getIdentificador(),ReservaAssembler.getInstance().toDomainFromDto(dto.getReserva()),
+				DiaSemanalAssembler.getInstance().toDomainFromDto(dto.getDia()),dto.getHoraInicio(),dto.getHoraFin());
 	}
 
 
 	@Override
 	public DetalleReservaEntity toEntityFromDomain(DetalleReservaDomain domain) {
 		return new DetalleReservaEntity(domain.getIdentificador(),
-				DiaSemanalAssembler.getInstance().toEntityFromDomain(domain.getDia()),domain.getHorainicio(),domain.getHorafin());
+				ReservaAssembler.getInstance().toEntityFromDomain(domain.getReserva()),DiaSemanalAssembler.getInstance().toEntityFromDomain(domain.getDia()),domain.getHorainicio(),domain.getHorafin());
 	}
 
 
 	@Override
 	public DetalleReservaDomain toDomainFromEntity(DetalleReservaEntity entity) {
 		return new DetalleReservaDomain(entity.getIdentificador(),
+				ReservaAssembler.getInstance().toDomainFromEntity(entity.getReserva()),
 				DiaSemanalAssembler.getInstance().toDomainFromEntity(entity.getDia()),entity.getHorainicio(),entity.getHorafin());
 	}
 

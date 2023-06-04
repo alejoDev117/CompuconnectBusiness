@@ -36,12 +36,14 @@ public final class DetalleReservaBusinessImp implements DetalleReservaBusiness{
 			result = daoFactory.getDetalleReservaDAO().read(entityTmp);
 		}while(!result.isEmpty());
 		
+		System.out.println(datosDetalleReserva.getHorainicio()+"-"+datosDetalleReserva.getHorafin());
 		
 		if(!UtilDateTime.localTimeIsBefore(datosDetalleReserva.getHorainicio(), datosDetalleReserva.getHorafin())) {
 			throw CompuconnectBusinessException.create(DetalleReservaBusinessImpMessage.BUSINESS_RULE_DETALLE_RESERVA_TIME_OUT_OF_RANGE);
 		}
 		
-		final var domainToCreate = new DetalleReservaDomain(identificador, 
+		final var domainToCreate = new DetalleReservaDomain(identificador,
+				datosDetalleReserva.getReserva(),
 				datosDetalleReserva.getDia(), 
 				datosDetalleReserva.getHorainicio(), 
 				datosDetalleReserva.getHorafin());

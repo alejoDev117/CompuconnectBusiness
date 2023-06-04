@@ -23,11 +23,9 @@ public final class ReservaDomain{
 	private FrecuenciaDomain frecuencia;
 	private String descripcion;
 	private Date horaCreacion;
-	private DetalleReservaDomain detalle;
 	
 
-	public ReservaDomain(UUID identificador, AgendaDomain agenda ,UsuarioDomain autor, TipoReservaDomain tipoReserva, Date FechaInicio, Date FechaFin,FrecuenciaDomain frecuencia,String descripcion, Date horaCreacion,
-			DetalleReservaDomain detalle) {
+	public ReservaDomain(UUID identificador, AgendaDomain agenda ,UsuarioDomain autor, TipoReservaDomain tipoReserva, Date FechaInicio, Date FechaFin,FrecuenciaDomain frecuencia,String descripcion, Date horaCreacion) {
 		setIdentificador(identificador);
 		setAgenda(agenda);
 		setAutor(autor);
@@ -37,7 +35,6 @@ public final class ReservaDomain{
 		setFrecuencia(frecuencia);
 		setDescripcion(descripcion);
 		setHoraCreacion(horaCreacion);
-		setDetalle(detalle);
 	}
 	
 	private ReservaDomain() {
@@ -51,7 +48,6 @@ public final class ReservaDomain{
 		setFrecuencia(FrecuenciaDomain.getDefaultObject());
 		setDescripcion(UtilText.getUtilText().getDefaultValue());
 		setHoraCreacion(UtilDateTime.getDefaultValueDate());
-		setDetalle(DetalleReservaDomain.getDefaultObject());
 	}
 	
 	
@@ -151,16 +147,6 @@ public final class ReservaDomain{
 	public final void setAgenda(AgendaDomain agenda) {
 		this.agenda = UtilObject.getDefault(agenda, AgendaDomain.getDefaultObject());
 	}
-
-	public final DetalleReservaDomain getDetalle() {
-		return detalle;
-	}
-
-	public final ReservaDomain setDetalle(DetalleReservaDomain detalle) {
-		this.detalle = UtilObject.getDefault(detalle, DetalleReservaDomain.getDefaultObject());
-		return this;
-	}
-
 
 	
 	

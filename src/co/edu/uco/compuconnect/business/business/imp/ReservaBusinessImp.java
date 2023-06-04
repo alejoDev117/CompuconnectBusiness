@@ -12,6 +12,7 @@ import co.edu.uco.compuconnect.crosscutting.utils.UtilDateTime;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilText;
 import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 import co.edu.uco.compuconnect.data.dao.factory.DAOFactory;
+import co.edu.uco.compuconnect.entities.DetalleReservaEntity;
 import co.edu.uco.compuconnect.entities.ReservaEntity;
 
 public final class ReservaBusinessImp implements ReservaBusiness{
@@ -27,16 +28,20 @@ public final class ReservaBusinessImp implements ReservaBusiness{
 		
 		UUID identificador;
 		ReservaEntity entityTmpIdentificador;
+		ReservaEntity entityTmpRangoFechas;
 		List<ReservaEntity> resultIdentificador;
+		List<ReservaEntity> resultRangoFechas;
+		List<DetalleReservaEntity> resultDetalleReservaEntrante;
+		List<DetalleReservaEntity> resultDetalleReservaBase;
 		
-		do {
+		/*do {
 			identificador = UtilUUID.generateNewUUID();
 			entityTmpIdentificador = ReservaEntity.create().setIdentificador(identificador);
 			resultIdentificador = daoFactory.getReservaDAO().read(entityTmpIdentificador);
 		}while(!resultIdentificador.isEmpty());
 		
 		
-		if(UtilDateTime.dateIsAfter(datosReserva.getFechaInicio(), datosReserva.getFechaFin())) {
+	/*	if(UtilDateTime.dateIsAfter(datosReserva.getFechaInicio(), datosReserva.getFechaFin())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_DATE_RANGE_INVALID);
 		}
 
@@ -51,6 +56,20 @@ public final class ReservaBusinessImp implements ReservaBusiness{
 		}
 		if(UtilUUID.isDefault(datosReserva.getFrecuencia().getIdentificador()) && !UtilText.getUtilText().isEmpty(datosReserva.getFrecuencia().getNombre())) {
 			throw CompuconnectBusinessException.create(ReservaBusinessImpMessage.BUSINESS_RULE_RESERVA_FRECUENCIA_INVALID);			
+		}
+		
+		*/
+		entityTmpRangoFechas = ReservaEntity.create().setAgenda(ReservaAssembler.getInstance().toEntityFromDomain(datosReserva).getAgenda()).
+				setFechaInicio(ReservaAssembler.getInstance().toEntityFromDomain(datosReserva).getFechaInicio()).
+				setFechaFin(ReservaAssembler.getInstance().toEntityFromDomain(datosReserva).getFechaFin());
+		resultRangoFechas = daoFactory.getReservaDAO().read(entityTmpRangoFechas);
+		
+		if(!resultRangoFechas.isEmpty()) {
+			resultDetalleReservaEntrante = daoFactory.getDetalleReservaDAO().read(DetalleReservaEntity.create().setReserva(entityTmpRangoFechas));
+			for (ReservaEntity entityTmp : resultRangoFechas) {
+				resultDetalleReservaBase = daoFactory.getDetalleReservaDAO().read(DetalleReservaEntity.create().setReserva(entityTmp));
+				//refactorizar muchisisismo mañana por favor men :)
+			}
 		}
 		
 		final ReservaEntity entity = ReservaAssembler.getInstance().toEntityFromDomain(datosReserva);
