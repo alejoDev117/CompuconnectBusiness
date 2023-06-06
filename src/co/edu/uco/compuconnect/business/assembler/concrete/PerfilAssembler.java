@@ -49,4 +49,16 @@ public class PerfilAssembler implements Assembler<PerfilDomain, PerfilDTO, Perfi
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+	@Override
+	public List<PerfilDomain> toDomainListFromDTOList(List<PerfilDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<PerfilEntity> toEntityListFromDomainList(List<PerfilDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

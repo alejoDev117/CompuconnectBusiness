@@ -24,11 +24,10 @@ public final class DetalleReservaFacadeImp implements DetalleReservaFacade{
 	}
 
 	@Override
-	public void crear(DetalleReservaDTO dto) {
+	public void crear(List<DetalleReservaDTO> dto) {
 		try {
 			
-			final var domain = DetalleReservaAssembler.getInstance().toDomainFromDto(dto);
-			
+			final var domain = DetalleReservaAssembler.getInstance().toDomainListFromDTOList(dto);
 			daoFactory.iniciarTransaccion();
 			business.crear(domain);
 			daoFactory.confirmarTransaccion();

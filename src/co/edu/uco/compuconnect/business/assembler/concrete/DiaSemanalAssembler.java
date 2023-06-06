@@ -56,6 +56,20 @@ public final class DiaSemanalAssembler implements Assembler<DiaSemanalDomain,Dia
 	public List<DiaSemanalDTO> toDTOListFromDomainList(List<DiaSemanalDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<DiaSemanalDomain> toDomainListFromDTOList(List<DiaSemanalDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<DiaSemanalEntity> toEntityListFromDomainList(List<DiaSemanalDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

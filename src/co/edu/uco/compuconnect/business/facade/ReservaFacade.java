@@ -2,6 +2,7 @@ package co.edu.uco.compuconnect.business.facade;
 
 import java.util.List;
 
+import co.edu.uco.compuconnect.dto.DetalleReservaDTO;
 import co.edu.uco.compuconnect.dto.ReservaDTO;
 
 public interface ReservaFacade {

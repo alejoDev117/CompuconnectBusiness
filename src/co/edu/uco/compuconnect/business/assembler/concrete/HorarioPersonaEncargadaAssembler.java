@@ -57,6 +57,19 @@ public class HorarioPersonaEncargadaAssembler implements Assembler<HorarioPerson
 	public List<HorarioPersonaEncargadaDTO> toDTOListFromDomainList(List<HorarioPersonaEncargadaDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<HorarioPersonaEncargadaDomain> toDomainListFromDTOList(List<HorarioPersonaEncargadaDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<HorarioPersonaEncargadaEntity> toEntityListFromDomainList(
+			List<HorarioPersonaEncargadaDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

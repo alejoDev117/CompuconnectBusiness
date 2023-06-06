@@ -58,4 +58,20 @@ public final class TipoSolicitudAssembler implements Assembler<TipoSolicitudDoma
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+
+
+	@Override
+	public List<TipoSolicitudDomain> toDomainListFromDTOList(List<TipoSolicitudDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public List<TipoSolicitudEntity> toEntityListFromDomainList(List<TipoSolicitudDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

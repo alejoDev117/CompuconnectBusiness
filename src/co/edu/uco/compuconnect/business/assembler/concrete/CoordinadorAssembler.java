@@ -65,6 +65,20 @@ public final  class CoordinadorAssembler implements Assembler<CoordinadorDomain,
 	public List<CoordinadorDTO> toDTOListFromDomainList(List<CoordinadorDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<CoordinadorDomain> toDomainListFromDTOList(List<CoordinadorDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<CoordinadorEntity> toEntityListFromDomainList(List<CoordinadorDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

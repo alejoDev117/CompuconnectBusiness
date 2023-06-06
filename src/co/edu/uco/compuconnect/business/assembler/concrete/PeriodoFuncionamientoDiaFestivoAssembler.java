@@ -70,6 +70,24 @@ public final class PeriodoFuncionamientoDiaFestivoAssembler implements Assembler
 			List<PeriodoFuncionamientoDiaFestivoDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+
+	@Override
+	public List<PeriodoFuncionamientoDiaFestivoDomain> toDomainListFromDTOList(
+			List<PeriodoFuncionamientoDiaFestivoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public List<PeriodoFuncionamientoDiaFestivoEntity> toEntityListFromDomainList(
+			List<PeriodoFuncionamientoDiaFestivoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

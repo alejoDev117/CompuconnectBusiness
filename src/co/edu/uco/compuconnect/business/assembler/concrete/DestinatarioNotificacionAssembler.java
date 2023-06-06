@@ -52,5 +52,18 @@ public class DestinatarioNotificacionAssembler implements Assembler<Destinatario
 	public List<DestinatarioNotificacionDTO> toDTOListFromDomainList(List<DestinatarioNotificacionDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<DestinatarioNotificacionDomain> toDomainListFromDTOList(List<DestinatarioNotificacionDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DestinatarioNotificacionEntity> toEntityListFromDomainList(
+			List<DestinatarioNotificacionDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -49,6 +49,18 @@ public class ContenidoAssembler implements Assembler<ContenidoDomain, ContenidoD
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+	@Override
+	public List<ContenidoDomain> toDomainListFromDTOList(List<ContenidoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ContenidoEntity> toEntityListFromDomainList(List<ContenidoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

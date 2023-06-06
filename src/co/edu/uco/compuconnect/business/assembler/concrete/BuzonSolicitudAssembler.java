@@ -54,4 +54,16 @@ public class BuzonSolicitudAssembler implements Assembler<BuzonSolicitudDomain, 
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+	@Override
+	public List<BuzonSolicitudDomain> toDomainListFromDTOList(List<BuzonSolicitudDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BuzonSolicitudEntity> toEntityListFromDomainList(List<BuzonSolicitudDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

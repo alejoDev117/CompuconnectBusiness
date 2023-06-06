@@ -63,6 +63,18 @@ public final class DetalleReservaAssembler implements Assembler< DetalleReservaD
 	public List<DetalleReservaDTO> toDTOListFromDomainList(List<DetalleReservaDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<DetalleReservaDomain> toDomainListFromDTOList(List<DetalleReservaDTO> dtoList) {
+		return dtoList.stream().map(dto -> toDomainFromDto(dto)).toList();
+	}
+
+
+	@Override
+	public List<DetalleReservaEntity> toEntityListFromDomainList(List<DetalleReservaDomain> domainList) {
+		return domainList.stream().map(domain -> toEntityFromDomain(domain)).toList();
+	}
 	
 	
 	

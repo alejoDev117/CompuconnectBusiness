@@ -6,7 +6,7 @@ import co.edu.uco.compuconnect.business.domain.DetalleReservaDomain;
 
 public  interface DetalleReservaBusiness{
 	
-	void crear(DetalleReservaDomain datosDetalleReserva);
+	void crear(List<DetalleReservaDomain> datosDetalleReserva);
 	
 	void modificar(DetalleReservaDomain datosModificacionDetalleReserva);
 	

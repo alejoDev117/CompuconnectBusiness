@@ -54,6 +54,20 @@ public final class SoftwareAssembler implements Assembler<SoftwareDomain,Softwar
 	public List<SoftwareDTO> toDTOListFromDomainList(List<SoftwareDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<SoftwareDomain> toDomainListFromDTOList(List<SoftwareDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<SoftwareEntity> toEntityListFromDomainList(List<SoftwareDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

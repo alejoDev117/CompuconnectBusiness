@@ -54,4 +54,18 @@ public final class DiaFestivoAssembler implements Assembler<DiaFestivoDomain,Dia
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+
+	@Override
+	public List<DiaFestivoDomain> toDomainListFromDTOList(List<DiaFestivoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<DiaFestivoEntity> toEntityListFromDomainList(List<DiaFestivoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -60,6 +60,20 @@ public final class SoftwareEquipoComputoAssembler implements Assembler<SoftwareE
 	public List<SoftwareEquipoComputoDTO> toDTOListFromDomainList(List<SoftwareEquipoComputoDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<SoftwareEquipoComputoDomain> toDomainListFromDTOList(List<SoftwareEquipoComputoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<SoftwareEquipoComputoEntity> toEntityListFromDomainList(List<SoftwareEquipoComputoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

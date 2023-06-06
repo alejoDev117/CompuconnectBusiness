@@ -54,6 +54,20 @@ public final class CentroInformaticaEquipoComputoAssembler implements Assembler<
 			List<CentroInformaticaEquipoComputoDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<CentroInformaticaEquipoComputoDomain> toDomainListFromDTOList(
+			List<CentroInformaticaEquipoComputoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CentroInformaticaEquipoComputoEntity> toEntityListFromDomainList(
+			List<CentroInformaticaEquipoComputoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

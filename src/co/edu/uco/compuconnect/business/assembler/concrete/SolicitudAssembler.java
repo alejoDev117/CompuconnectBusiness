@@ -60,6 +60,18 @@ public final class SolicitudAssembler implements Assembler<SolicitudDomain,Solic
 	public List<SolicitudDTO> toDTOListFromDomainList(List<SolicitudDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<SolicitudDomain> toDomainListFromDTOList(List<SolicitudDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<SolicitudEntity> toEntityListFromDomainList(List<SolicitudDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

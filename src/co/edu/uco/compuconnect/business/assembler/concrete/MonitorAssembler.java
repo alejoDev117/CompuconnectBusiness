@@ -64,6 +64,20 @@ public final class MonitorAssembler implements Assembler<MonitorDomain,MonitorDT
 	public List<MonitorDTO> toDTOListFromDomainList(List<MonitorDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<MonitorDomain> toDomainListFromDTOList(List<MonitorDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<MonitorEntity> toEntityListFromDomainList(List<MonitorDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

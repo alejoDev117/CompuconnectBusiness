@@ -61,6 +61,20 @@ public final class ExcepcionAgendaAssembler implements Assembler<ExcepcionAgenda
 	public List<ExcepcionAgendaDTO> toDTOListFromDomainList(List<ExcepcionAgendaDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+
+	@Override
+	public List<ExcepcionAgendaDomain> toDomainListFromDTOList(List<ExcepcionAgendaDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<ExcepcionAgendaEntity> toEntityListFromDomainList(List<ExcepcionAgendaDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

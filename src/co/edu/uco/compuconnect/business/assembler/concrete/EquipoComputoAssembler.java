@@ -48,6 +48,18 @@ public final class EquipoComputoAssembler implements Assembler<EquipoComputoDoma
 	public List<EquipoComputoDTO> toDTOListFromDomainList(List<EquipoComputoDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<EquipoComputoDomain> toDomainListFromDTOList(List<EquipoComputoDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EquipoComputoEntity> toEntityListFromDomainList(List<EquipoComputoDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

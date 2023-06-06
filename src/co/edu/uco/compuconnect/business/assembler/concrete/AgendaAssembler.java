@@ -2,12 +2,11 @@ package co.edu.uco.compuconnect.business.assembler.concrete;
 
 import java.util.List;
 
+
 import co.edu.uco.compuconnect.business.assembler.Assembler;
 import co.edu.uco.compuconnect.business.domain.AgendaDomain;
-import co.edu.uco.compuconnect.crosscutting.utils.UtilUUID;
 import co.edu.uco.compuconnect.dto.AgendaDTO;
 import co.edu.uco.compuconnect.entities.AgendaEntity;
-import co.edu.uco.compuconnect.entities.PeriodoFuncionamientoEntity;
 
 public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,AgendaEntity> {
 	
@@ -62,6 +61,18 @@ public final  class AgendaAssembler implements Assembler<AgendaDomain,AgendaDTO,
 	@Override
 	public List<AgendaDTO> toDTOListFromDomainList(List<AgendaDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
+	}
+
+
+	@Override
+	public List<AgendaDomain> toDomainListFromDTOList(List<AgendaDTO> dtoList) {
+		return dtoList.stream().map(dto -> toDomainFromDto(dto)).toList();
+	}
+
+
+	@Override
+	public List<AgendaEntity> toEntityListFromDomainList(List<AgendaDomain> domainList) {
+		return domainList.stream().map(domain -> toEntityFromDomain(domain)).toList();
 	}
 	
 

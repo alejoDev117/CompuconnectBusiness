@@ -6,7 +6,7 @@ import co.edu.uco.compuconnect.dto.DetalleReservaDTO;
 
 public interface DetalleReservaFacade {
 	
-	void crear(DetalleReservaDTO dto);
+	void crear(List<DetalleReservaDTO> dto);
 	
 	void modificar(DetalleReservaDTO dto);
 	

@@ -49,4 +49,16 @@ public class DestinatarioAssembler implements Assembler<DestinatarioDomain, Dest
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+	@Override
+	public List<DestinatarioDomain> toDomainListFromDTOList(List<DestinatarioDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DestinatarioEntity> toEntityListFromDomainList(List<DestinatarioDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

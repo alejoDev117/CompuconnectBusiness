@@ -54,6 +54,18 @@ public class ReservaPerfilAssembler implements Assembler<ReservaPerfilDomain, Re
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
 
+	@Override
+	public List<ReservaPerfilDomain> toDomainListFromDTOList(List<ReservaPerfilDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ReservaPerfilEntity> toEntityListFromDomainList(List<ReservaPerfilDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

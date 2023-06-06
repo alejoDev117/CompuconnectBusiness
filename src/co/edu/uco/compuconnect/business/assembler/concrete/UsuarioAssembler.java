@@ -58,6 +58,18 @@ public final class UsuarioAssembler implements Assembler<UsuarioDomain,UsuarioDT
 	public List<UsuarioDTO> toDTOListFromDomainList(List<UsuarioDomain> domainList) {
 		return domainList.stream().map(domain -> toDTOFromDomain(domain)).toList();
 	}
+
+	@Override
+	public List<UsuarioDomain> toDomainListFromDTOList(List<UsuarioDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UsuarioEntity> toEntityListFromDomainList(List<UsuarioDomain> domainList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

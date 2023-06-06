@@ -86,7 +86,7 @@ public class PeriodoFuncionamientoDomain {
 		return fechaFin;
 	}
 	
-	private final void setFechaFin(final Date fechaInicio) {
+	private final void setFechaFin(final Date fechaFin) {
 		this.fechaFin = UtilDateTime.getDefaultDate(fechaFin);
 		
 	}
